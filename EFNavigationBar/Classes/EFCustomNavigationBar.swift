@@ -3,56 +3,34 @@
 //  EFNavigationBar
 //
 //  Created by itwangrui on 2017/11/25.
-//  Copyright © 2017年 wangrui. All rights reserved.
 //
+//  Copyright (c) 2019 EyreFree <eyrefree@eyrefree.org>
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
 
 import UIKit
 
-fileprivate let EFDefaultTitleSize: CGFloat = 18
-fileprivate let EFDefaultTitleColor = UIColor.black
-fileprivate let EFDefaultBackgroundColor = UIColor.white
-fileprivate let EFScreenWidth = UIScreen.main.bounds.size.width
+let EFDefaultTitleSize: CGFloat = 18
+let EFDefaultTitleColor = UIColor.black
+let EFDefaultBackgroundColor = UIColor.white
+let EFScreenWidth = UIScreen.main.bounds.size.width
 
-// MARK: - Router
-public extension UIViewController {
-    //  A页面 弹出 登录页面B
-    //  presentedViewController:    A页面
-    //  presentingViewController:   B页面
-    
-    func ef_toLastViewController(animated: Bool) {
-        if self.navigationController != nil {
-            if self.navigationController?.viewControllers.count == 1 {
-                self.dismiss(animated: animated, completion: nil)
-            } else {
-                self.navigationController?.popViewController(animated: animated)
-            }
-        } else if self.presentingViewController != nil {
-            self.dismiss(animated: animated, completion: nil)
-        }
-    }
-    
-    class func ef_currentViewController() -> UIViewController {
-        if let rootVC = UIApplication.shared.delegate?.window??.rootViewController {
-            return self.ef_currentViewController(from: rootVC)
-        } else {
-            return UIViewController()
-        }
-    }
-
-    class func ef_currentViewController(from fromVC: UIViewController) -> UIViewController {
-        if let navigationController = fromVC as? UINavigationController, let subViewController = navigationController.viewControllers.last {
-            return ef_currentViewController(from: subViewController)
-        } else if let tabBarController = fromVC as? UITabBarController, let subViewController = tabBarController.selectedViewController {
-            return ef_currentViewController(from: subViewController)
-        } else if let presentedViewController = fromVC.presentedViewController {
-            return ef_currentViewController(from: presentedViewController)
-        } else {
-            return fromVC
-        }
-    }
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
 public class EFCustomNavigationBar: UIView {
     public var onClickLeftButton:(()->())?
     public var onClickRightButton:(()->())?
@@ -87,8 +65,8 @@ public class EFCustomNavigationBar: UIView {
         }
     }
     
-    // fileprivate UI variable
-    fileprivate lazy var titleLabel: UILabel = {
+    //  UI variable
+    lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = EFDefaultTitleColor
         label.font = UIFont.systemFont(ofSize: EFDefaultTitleSize)
@@ -101,7 +79,7 @@ public class EFCustomNavigationBar: UIView {
         let button = UIButton()
         button.imageView?.contentMode = .center
         button.isHidden = true
-        button.addTarget(self, action: #selector(clickBack), for: .touchUpInside)
+        button.addTarget(self, action: #selector(clickLeft), for: .touchUpInside)
         return button
     }()
     
@@ -113,32 +91,27 @@ public class EFCustomNavigationBar: UIView {
         return button
     }()
     
-    fileprivate lazy var bottomLine: UIView = {
+    lazy var bottomLine: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(red: (218.0 / 255.0), green: (218.0 / 255.0), blue: (218.0 / 255.0), alpha: 1.0)
         return view
     }()
     
-    fileprivate lazy var backgroundView: UIView = {
+    lazy var backgroundView: UIView = {
         let view = UIView()
         return view
     }()
     
-    fileprivate lazy var backgroundImageView: UIImageView = {
+    lazy var backgroundImageView: UIImageView = {
         let imgView = UIImageView()
         imgView.isHidden = true
         return imgView
     }()
     
-    // fileprivate other variable
-    fileprivate static var isIphoneX: Bool {
+    //  other variable
+    static var navBarBottom: Int {
         get {
-            return UIScreen.main.bounds.equalTo(CGRect(x: 0, y: 0, width: 375, height: 812))
-        }
-    }
-    fileprivate static var navBarBottom: Int {
-        get {
-            return isIphoneX ? 88 : 64
+            return UIDevice.isiPhoneX ? 88 : 64
         }
     }
     
@@ -168,7 +141,7 @@ public class EFCustomNavigationBar: UIView {
         backgroundView.backgroundColor = EFDefaultBackgroundColor
     }
     public func updateFrame() {
-        let top: CGFloat = EFCustomNavigationBar.isIphoneX ? 44 : 20
+        let top: CGFloat = UIDevice.isiPhoneX ? 44 : 20
         let margin: CGFloat = 0
         let buttonHeight: CGFloat = 44
         let buttonWidth: CGFloat = 44
@@ -219,7 +192,7 @@ public extension EFCustomNavigationBar {
     func ef_setRightButton(title: String, titleColor: UIColor) {
         ef_setRightButton(normal: nil, highlighted: nil, title: title, titleColor: titleColor)
     }
-
+    
     // 左右按钮私有方法
     private func ef_setLeftButton(normal: UIImage?, highlighted: UIImage?, title: String?, titleColor: UIColor?) {
         leftButton.isHidden = false
@@ -239,14 +212,16 @@ public extension EFCustomNavigationBar {
 
 // MARK: - 导航栏左右按钮事件
 public extension EFCustomNavigationBar {
-    @objc func clickBack() {
-        if let onClickBack = onClickLeftButton {
-            onClickBack()
+
+    @objc func clickLeft() {
+        if let onClickLeft = onClickLeftButton {
+            onClickLeft()
         } else {
             let currentVC = UIViewController.ef_currentViewController()
             currentVC.ef_toLastViewController(animated: true)
         }
     }
+
     @objc func clickRight() {
         if let onClickRight = onClickRightButton {
             onClickRight()

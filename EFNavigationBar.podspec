@@ -19,12 +19,4 @@ EFNavigationBar - An ordinary custom navigation bar.
 
   s.requires_arc = true
   s.source_files = 'EFNavigationBar/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'EFNavigationBar' => ['EFNavigationBar/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
