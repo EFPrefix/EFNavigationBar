@@ -1,0 +1,26 @@
+PODS:
+  - EFNavigationBar (0.1.0)
+  - WRCycleScrollView (0.1.0)
+
+DEPENDENCIES:
+  - EFNavigationBar (from `../`)
+  - WRCycleScrollView (from `https://github.com/EFRenovation/WRCycleScrollView.git`)
+
+EXTERNAL SOURCES:
+  EFNavigationBar:
+    :path: "../"
+  WRCycleScrollView:
+    :git: https://github.com/EFRenovation/WRCycleScrollView.git
+
+CHECKOUT OPTIONS:
+  WRCycleScrollView:
+    :commit: 277e34023b5027f3e5eb110799797b38c2808546
+    :git: https://github.com/EFRenovation/WRCycleScrollView.git
+
+SPEC CHECKSUMS:
+  EFNavigationBar: 2eb61c2247e80197a1e29c4c383ab5aaa2d29a8d
+  WRCycleScrollView: 6df3059c5c7a84c16d65b662d4ebbb420adb10c9
+
+PODFILE CHECKSUM: 67b7e582579741185981c33644213b174c2979bf
+
+COCOAPODS: 1.5.3
