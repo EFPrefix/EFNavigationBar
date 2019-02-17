@@ -42,18 +42,21 @@ pod 'EFNavigationBar'
 For more details, see the `Example` project：
 
 ```swift
+// Part
 navBarBarTintColor = .white
 navBarBackgroundAlpha = alpha
 navBarTintColor = UIColor(red: 0, green: 0.478431, blue: 1, alpha: 1.0)
 navBarTitleColor = .black
 statusBarStyle = .default
 navBarShadowImageHidden = true
+navBarTransition = .linear
 
+// Global
 EFNavigationBar.defaultNavBarBarTintColor = UIColor.init(red: 0 / 255.0, green: 175 / 255.0, blue: 240 / 255.0, alpha: 1)
 EFNavigationBar.defaultNavBarTintColor = .white
 EFNavigationBar.defaultNavBarTitleColor = .white
 EFNavigationBar.defaultStatusBarStyle = .lightContent
-EFNavigationBar.defaultShadowImageHidden = true
+EFNavigationBar.defaultTransition = .linear
 ```
 
 ## Other

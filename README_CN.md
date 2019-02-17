@@ -68,6 +68,8 @@ navBarTitleColor = .black
 statusBarStyle = .default
 // 一行代码搞定导航栏底部分割线是否隐藏
 navBarShadowImageHidden = true
+// 导航栏转场过渡
+navBarTransition = .linear
 
 // 设置导航栏默认的背景颜色
 EFNavigationBar.defaultNavBarBarTintColor = UIColor.init(red: 0 / 255.0, green: 175 / 255.0, blue: 240 / 255.0, alpha: 1)
@@ -79,6 +81,8 @@ EFNavigationBar.defaultNavBarTitleColor = .white
 EFNavigationBar.defaultStatusBarStyle = .lightContent
 // 如果需要设置导航栏底部分割线隐藏，可以在这里统一设置
 EFNavigationBar.defaultShadowImageHidden = true
+// 设置全局导航栏转场过渡
+EFNavigationBar.defaultTransition = .linear
 ```
 
 ## 其它
