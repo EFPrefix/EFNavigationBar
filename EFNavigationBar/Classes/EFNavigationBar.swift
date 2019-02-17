@@ -35,6 +35,7 @@ public class EFNavigationBar {
         static var defaultNavBarTitleColorKey: UIColor = UIColor.black
         static var defaultStatusBarStyleKey: UIStatusBarStyle = UIStatusBarStyle.default
         static var defaultShadowImageHiddenKey: Bool = false
+        static var defaultTransitionKey: EFTransition = EFTransitionMethod.linear
     }
     
     public class var defaultNavBarBarTintColor: UIColor {
@@ -88,6 +89,15 @@ public class EFNavigationBar {
         }
         set {
             objc_setAssociatedObject(self, &AssociatedKeys.defaultShadowImageHiddenKey, newValue, .OBJC_ASSOCIATION_ASSIGN)
+        }
+    }
+
+    public class var defaultTransition: EFTransition {
+        get {
+            return objc_getAssociatedObject(self, &AssociatedKeys.defaultTransitionKey) as? EFTransition ?? EFTransitionMethod.linear
+        }
+        set {
+            objc_setAssociatedObject(self, &AssociatedKeys.defaultTransitionKey, newValue, .OBJC_ASSOCIATION_ASSIGN)
         }
     }
     

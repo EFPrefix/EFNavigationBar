@@ -145,9 +145,8 @@ public extension UINavigationBar {
     }
     
     // call swizzling methods active 主动调用交换方法
-    private static let onceToken = UUID().uuidString
     public static func efAwake() {
-        DispatchQueue.once(token: onceToken) {
+        DispatchQueue.once() {
             let needSwizzleSelectorArr = [
                 #selector(setter: titleTextAttributes)
             ]

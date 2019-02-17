@@ -64,34 +64,33 @@ public extension UINavigationController {
     
     func updateNavigationBar(fromVC: UIViewController?, toVC: UIViewController?, progress: CGFloat) {
         // change navBarBarTintColor
-        let fromBarTintColor = fromVC?.navBarBarTintColor ?? EFNavigationBar.defaultNavBarBarTintColor
-        let toBarTintColor   = toVC?.navBarBarTintColor ?? EFNavigationBar.defaultNavBarBarTintColor
-        let newBarTintColor  = UIColor.middleColor(fromColor: fromBarTintColor, toColor: toBarTintColor, percent: progress)
+        let fromBarTintColor: UIColor = fromVC?.navBarBarTintColor ?? EFNavigationBar.defaultNavBarBarTintColor
+        let toBarTintColor: UIColor = toVC?.navBarBarTintColor ?? EFNavigationBar.defaultNavBarBarTintColor
+        let newBarTintColor: UIColor = fromVC?.navBarTransition.mappingColor(fromColor: fromBarTintColor, toColor: toBarTintColor, percent: progress) ?? fromBarTintColor
         setNeedsNavigationBarUpdate(barTintColor: newBarTintColor)
         
         // change navBarTintColor
-        let fromTintColor = fromVC?.navBarTintColor ?? EFNavigationBar.defaultNavBarTintColor
-        let toTintColor = toVC?.navBarTintColor ?? EFNavigationBar.defaultNavBarTintColor
-        let newTintColor = UIColor.middleColor(fromColor: fromTintColor, toColor: toTintColor, percent: progress)
+        let fromTintColor: UIColor = fromVC?.navBarTintColor ?? EFNavigationBar.defaultNavBarTintColor
+        let toTintColor: UIColor = toVC?.navBarTintColor ?? EFNavigationBar.defaultNavBarTintColor
+        let newTintColor: UIColor = fromVC?.navBarTransition.mappingColor(fromColor: fromTintColor, toColor: toTintColor, percent: progress) ?? fromTintColor
         setNeedsNavigationBarUpdate(tintColor: newTintColor)
         
         // change navBarTitleColor
         //        let fromTitleColor = fromVC?.navBarTitleColor ?? EFNavigationBar.defaultNavBarTitleColor
         //        let toTitleColor = toVC?.navBarTitleColor ?? EFNavigationBar.defaultNavBarTitleColor
-        //        let newTitleColor = UIColor.middleColor(fromColor: fromTitleColor, toColor: toTitleColor, percent: progress)
+        //        let newTitleColor = fromVC?.navBarTransition.mappingColor(fromColor: fromTitleColor, toColor: toTitleColor, percent: progress) ?? fromTitleColor
         //        setNeedsNavigationBarUpdate(titleColor: newTitleColor)
         
         // change navBar _UIBarBackground alpha
-        let fromBarBackgroundAlpha = fromVC?.navBarBackgroundAlpha ?? EFNavigationBar.defaultBackgroundAlpha
-        let toBarBackgroundAlpha = toVC?.navBarBackgroundAlpha ?? EFNavigationBar.defaultBackgroundAlpha
-        let newBarBackgroundAlpha = CGFloat.middleAlpha(fromAlpha: fromBarBackgroundAlpha, toAlpha: toBarBackgroundAlpha, percent: progress)
+        let fromBarBackgroundAlpha: CGFloat = fromVC?.navBarBackgroundAlpha ?? EFNavigationBar.defaultBackgroundAlpha
+        let toBarBackgroundAlpha: CGFloat = toVC?.navBarBackgroundAlpha ?? EFNavigationBar.defaultBackgroundAlpha
+        let newBarBackgroundAlpha: CGFloat = fromVC?.navBarTransition.mappingAlpha(fromAlpha: fromBarBackgroundAlpha, toAlpha: toBarBackgroundAlpha, percent: progress) ?? fromBarBackgroundAlpha
         setNeedsNavigationBarUpdate(barBackgroundAlpha: newBarBackgroundAlpha)
     }
     
     // call swizzling methods active 主动调用交换方法
-    private static let onceToken = UUID().uuidString
     public static func fatherAwake() {
-        DispatchQueue.once(token: onceToken) {
+        DispatchQueue.once() {
             let needSwizzleSelectorArr = [
                 NSSelectorFromString("_updateInteractiveTransition:"),
                 #selector(popToViewController),

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		124680B722196999002D116B /* README_CN.md in Resources */ = {isa = PBXBuildFile; fileRef = 124680B622196999002D116B /* README_CN.md */; };
 		12D4A8632217C205002C75B5 /* QQAppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D4A8522217C203002C75B5 /* QQAppController.swift */; };
 		12D4A8642217C205002C75B5 /* QQMineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D4A8532217C203002C75B5 /* QQMineController.swift */; };
 		12D4A8652217C205002C75B5 /* QQZoneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D4A8542217C204002C75B5 /* QQZoneController.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		124680B622196999002D116B /* README_CN.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README_CN.md; path = ../README_CN.md; sourceTree = "<group>"; };
 		12D4A8522217C203002C75B5 /* QQAppController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QQAppController.swift; sourceTree = "<group>"; };
 		12D4A8532217C203002C75B5 /* QQMineController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QQMineController.swift; sourceTree = "<group>"; };
 		12D4A8542217C204002C75B5 /* QQZoneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QQZoneController.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			children = (
 				851C65641F5A8D233C060B76 /* EFNavigationBar.podspec */,
 				472677B27A2C5A211D4284DE /* README.md */,
+				124680B622196999002D116B /* README_CN.md */,
 				957A402F7489156358947A49 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
@@ -297,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				124680B722196999002D116B /* README_CN.md in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);

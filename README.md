@@ -49,11 +49,11 @@ navBarTitleColor = .black
 statusBarStyle = .default
 navBarShadowImageHidden = true
 
-UIColor.defaultNavBarBarTintColor = UIColor.init(red: 0 / 255.0, green: 175 / 255.0, blue: 240 / 255.0, alpha: 1)
-UIColor.defaultNavBarTintColor = .white
-UIColor.defaultNavBarTitleColor = .white
-UIColor.defaultStatusBarStyle = .lightContent
-UIColor.defaultShadowImageHidden = true
+EFNavigationBar.defaultNavBarBarTintColor = UIColor.init(red: 0 / 255.0, green: 175 / 255.0, blue: 240 / 255.0, alpha: 1)
+EFNavigationBar.defaultNavBarTintColor = .white
+EFNavigationBar.defaultNavBarTitleColor = .white
+EFNavigationBar.defaultStatusBarStyle = .lightContent
+EFNavigationBar.defaultShadowImageHidden = true
 ```
 
 ## Other

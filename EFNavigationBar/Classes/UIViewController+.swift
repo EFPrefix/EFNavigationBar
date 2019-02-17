@@ -78,6 +78,7 @@ public extension UIViewController {
         static var navBarTitleColor: UIColor = EFNavigationBar.defaultNavBarTitleColor
         static var statusBarStyle: UIStatusBarStyle = UIStatusBarStyle.default
         static var navBarShadowImageHidden: Bool = false
+        static var navBarTransition: EFTransition = EFTransitionMethod.linear
 
         static var customNavBar: UINavigationBar = UINavigationBar()
     }
@@ -253,6 +254,19 @@ public extension UIViewController {
         }
     }
 
+    // if you want shadowImage hidden,you can via hideShadowImage = true
+    var navBarTransition: EFTransition {
+        get {
+            guard let isHidden = objc_getAssociatedObject(self, &AssociatedKeys.navBarTransition) as? EFTransition else {
+                return EFNavigationBar.defaultTransition
+            }
+            return isHidden
+        }
+        set {
+            objc_setAssociatedObject(self, &AssociatedKeys.navBarTransition, newValue, .OBJC_ASSOCIATION_ASSIGN)
+        }
+    }
+
     // custom navigationBar
     var customNavBar: UIView {
         get {
@@ -267,9 +281,8 @@ public extension UIViewController {
     }
 
     // swizzling two system methods: viewWillAppear(_:) and viewWillDisappear(_:)
-    private static let onceToken = UUID().uuidString
     @objc public static func efAwake() {
-        DispatchQueue.once(token: onceToken) {
+        DispatchQueue.once() {
             let needSwizzleSelectors = [
                 #selector(viewWillAppear(_:)),
                 #selector(viewWillDisappear(_:)),
