@@ -52,6 +52,8 @@ extension NormalListController: UITableViewDelegate, UITableViewDataSource {
             str = "蚂蚁森林"
         case 6:
             str = "连续多个界面导航栏透明"
+        case 7:
+            str = "present"
         default:
             str = ""
         }
@@ -81,6 +83,11 @@ extension NormalListController: UITableViewDelegate, UITableViewDataSource {
             navigationController?.pushViewController(AntForestController(), animated: true)
         case 6:
             navigationController?.pushViewController(AllTransparent(), animated: true)
+        case 7:
+            let cust: CustomListController = CustomListController()
+            cust.navBar.ef_setLeftButton(title: "<<", titleColor: UIColor.white)
+            let navi: UINavigationController = UINavigationController(rootViewController: cust)
+            self.navigationController?.present(navi, animated: true, completion: nil)
         default:
             break
         }

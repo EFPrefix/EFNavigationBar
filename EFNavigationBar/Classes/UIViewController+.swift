@@ -28,19 +28,20 @@ import Foundation
 
 // MARK: - Router
 public extension UIViewController {
-    //  A页面 弹出 登录页面B
-    //  presentedViewController:    A页面
-    //  presentingViewController:   B页面
 
-    func ef_toLastViewController(animated: Bool) {
-        if self.navigationController != nil {
-            if self.navigationController?.viewControllers.count == 1 {
-                self.dismiss(animated: animated, completion: nil)
+    // https://www.jianshu.com/p/1cab96bcbde9
+    func gotoLastViewController(animated: Bool, completion: (() -> Void)? = nil) {
+        if let navigationController = self.navigationController {
+            if navigationController.viewControllers.count == 1 {
+                self.dismiss(animated: animated, completion: completion)
             } else {
-                self.navigationController?.popViewController(animated: animated)
+                CATransaction.begin()
+                CATransaction.setCompletionBlock(completion)
+                navigationController.popViewController(animated: animated)
+                CATransaction.commit()
             }
-        } else if self.presentingViewController != nil {
-            self.dismiss(animated: animated, completion: nil)
+        } else if nil != self.presentingViewController {
+            self.dismiss(animated: animated, completion: completion)
         }
     }
 

@@ -218,7 +218,7 @@ public extension EFCustomNavigationBar {
             onClickLeft()
         } else {
             let currentVC = UIViewController.ef_currentViewController()
-            currentVC.ef_toLastViewController(animated: true)
+            currentVC.gotoLastViewController(animated: true)
         }
     }
 
