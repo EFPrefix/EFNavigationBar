@@ -10,4 +10,5 @@ Make transition process exposed.
 
 ## [0.1.0](https://github.com/EFPrefix/EFNavigationBar/releases/tag/0.1.0) (2019-02-16)
 
-First public release.
+- Wrap with CocoaPods;
+- Fix iPhoneX support.
