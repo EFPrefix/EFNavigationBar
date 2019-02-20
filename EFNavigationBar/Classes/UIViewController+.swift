@@ -45,23 +45,23 @@ public extension UIViewController {
         }
     }
 
-    class func ef_currentViewController() -> UIViewController {
+    class func currentViewController() -> UIViewController {
         if let rootVC = UIApplication.shared.delegate?.window??.rootViewController {
-            return self.ef_currentViewController(from: rootVC)
+            return self.currentViewController(from: rootVC)
         } else {
             return UIViewController()
         }
     }
 
-    class func ef_currentViewController(from fromVC: UIViewController) -> UIViewController {
-        if let navigationController = fromVC as? UINavigationController, let subViewController = navigationController.viewControllers.last {
-            return ef_currentViewController(from: subViewController)
-        } else if let tabBarController = fromVC as? UITabBarController, let subViewController = tabBarController.selectedViewController {
-            return ef_currentViewController(from: subViewController)
-        } else if let presentedViewController = fromVC.presentedViewController {
-            return ef_currentViewController(from: presentedViewController)
+    class func currentViewController(from viewController: UIViewController) -> UIViewController {
+        if let navigationController = viewController as? UINavigationController, let subViewController = navigationController.viewControllers.last {
+            return currentViewController(from: subViewController)
+        } else if let tabBarController = viewController as? UITabBarController, let subViewController = tabBarController.selectedViewController {
+            return currentViewController(from: subViewController)
+        } else if let presentedViewController = viewController.presentedViewController {
+            return currentViewController(from: presentedViewController)
         } else {
-            return fromVC
+            return viewController
         }
     }
 }
@@ -164,7 +164,7 @@ public extension UIViewController {
 
             if customNavBar.isKind(of: UINavigationBar.self) {
                 //                let navBar = customNavBar as! UINavigationBar
-                //                navBar.ef_setBackgroundAlpha(alpha: newValue)
+                //                navBar.setBackgroundAlpha(alpha: newValue)
             } else {
                 if canUpdateNavBarBarTintColorOrBackgroundAlpha == true {
                     navigationController?.setNeedsNavigationBarUpdate(barBackgroundAlpha: newValue)
@@ -338,8 +338,18 @@ public extension UIViewController {
     func canUpdateNavigationBar() -> Bool {
         let viewFrame = view.frame
         let maxFrame = UIScreen.main.bounds
-        let middleFrame = CGRect(x: 0, y: EFNavigationBar.navBarBottom(), width: EFNavigationBar.screenWidth(), height: EFNavigationBar.screenHeight()-EFNavigationBar.navBarBottom())
-        let minFrame = CGRect(x: 0, y: EFNavigationBar.navBarBottom(), width: EFNavigationBar.screenWidth(), height: EFNavigationBar.screenHeight()-EFNavigationBar.navBarBottom()-EFNavigationBar.tabBarHeight())
+        let middleFrame = CGRect(
+            x: 0,
+            y: EFNavigationBar.defaultNavBarBottom,
+            width: EFNavigationBar.screenWidth(),
+            height: EFNavigationBar.screenHeight() - EFNavigationBar.defaultNavBarBottom
+        )
+        let minFrame = CGRect(
+            x: 0,
+            y: EFNavigationBar.defaultNavBarBottom,
+            width: EFNavigationBar.screenWidth(),
+            height: EFNavigationBar.screenHeight() - EFNavigationBar.defaultNavBarBottom - EFNavigationBar.tabBarHeight()
+        )
         // 蝙蝠🦇
         let isBat = viewFrame.equalTo(maxFrame) || viewFrame.equalTo(middleFrame) || viewFrame.equalTo(minFrame)
         if self.navigationController != nil && isBat == true {

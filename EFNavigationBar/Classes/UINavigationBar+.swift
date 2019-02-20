@@ -63,7 +63,14 @@ public extension UINavigationBar {
         if (backgroundImageView == nil) {
             // add a image(nil color) to _UIBarBackground make it clear
             setBackgroundImage(UIImage(), for: .default)
-            backgroundImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: Int(bounds.width), height: EFNavigationBar.navBarBottom()))
+            backgroundImageView = UIImageView(
+                frame: CGRect(
+                    x: 0,
+                    y: 0,
+                    width: Int(bounds.width),
+                    height: EFNavigationBar.defaultNavBarBottom
+                )
+            )
             backgroundImageView?.autoresizingMask = .flexibleWidth
             // _UIBarBackground is first subView for navigationBar
             subviews.first?.insertSubview(backgroundImageView ?? UIImageView(), at: 0)
@@ -78,7 +85,14 @@ public extension UINavigationBar {
         if (backgroundView == nil) {
             // add a image(nil color) to _UIBarBackground make it clear
             setBackgroundImage(UIImage(), for: .default)
-            backgroundView = UIView(frame: CGRect(x: 0, y: 0, width: Int(bounds.width), height: EFNavigationBar.navBarBottom()))
+            backgroundView = UIView(
+                frame: CGRect(
+                    x: 0,
+                    y: 0,
+                    width: Int(bounds.width),
+                    height: EFNavigationBar.defaultNavBarBottom
+                )
+            )
             backgroundView?.autoresizingMask = .flexibleWidth
             // _UIBarBackground is first subView for navigationBar
             subviews.first?.insertSubview(backgroundView ?? UIView(), at: 0)
@@ -87,7 +101,7 @@ public extension UINavigationBar {
     }
     
     // set _UIBarBackground alpha (_UIBarBackground subviews alpha <= _UIBarBackground alpha)
-    func ef_setBackgroundAlpha(alpha: CGFloat) {
+    func setBackgroundAlpha(alpha: CGFloat) {
         if let barBackgroundView = subviews.first {
             if #available(iOS 11.0, *) {   // sometimes we can't change _UIBarBackground alpha
                 for view in barBackgroundView.subviews {

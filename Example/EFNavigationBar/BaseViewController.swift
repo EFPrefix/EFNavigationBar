@@ -32,10 +32,10 @@ class BaseViewController: UIViewController {
         navBar.titleLabelColor = .white
 
         // 设置自定义导航栏左右按钮字体颜色
-        navBar.ef_setTintColor(color: .white)
+        navBar.setTintColor(color: .white)
         
         if self.navigationController?.children.count != 1 {
-            navBar.ef_setLeftButton(title: "<<", titleColor: UIColor.white)
+            navBar.setLeftButton(title: "<<", titleColor: UIColor.white)
         }
     }
     

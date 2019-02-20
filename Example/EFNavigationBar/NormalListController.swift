@@ -9,7 +9,7 @@
 import UIKit
 import EFNavigationBar
 
-let kNavBarBottom = EFNavigationBar.navBarBottom()
+let kNavBarBottom = EFNavigationBar.defaultNavBarBottom
 
 class NormalListController: UIViewController {
     lazy var tableView: UITableView = UITableView(frame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: self.view.bounds.height), style: .plain)
@@ -85,7 +85,7 @@ extension NormalListController: UITableViewDelegate, UITableViewDataSource {
             navigationController?.pushViewController(AllTransparent(), animated: true)
         case 7:
             let cust: CustomListController = CustomListController()
-            cust.navBar.ef_setLeftButton(title: "<<", titleColor: UIColor.white)
+            cust.navBar.setLeftButton(title: "<<", titleColor: UIColor.white)
             let navi: UINavigationController = UINavigationController(rootViewController: cust)
             self.navigationController?.present(navi, animated: true, completion: nil)
         default:

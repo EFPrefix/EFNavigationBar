@@ -51,7 +51,7 @@ class CustomNavBarController: BaseViewController {
         navBar.barBackgroundColor = UIColor(red: 247 / 255.0, green: 247 / 255.0, blue: 247 / 255.0, alpha: 1.0)
         
         // 设置初始导航栏透明度
-        navBar.ef_setBackgroundAlpha(alpha: 0)
+        navBar.setBackgroundAlpha(alpha: 0)
         
         // 设置标题文字颜色
         navBar.titleLabelColor = UIColor.white
@@ -64,13 +64,13 @@ extension CustomNavBarController {
         let offsetY = scrollView.contentOffset.y
         if (offsetY > NAVBAR_COLORCHANGE_POINT) {
             let alpha = (offsetY - NAVBAR_COLORCHANGE_POINT) / CGFloat(kNavBarBottom)
-            navBar.ef_setBackgroundAlpha(alpha: alpha)
-            navBar.ef_setTintColor(color: UIColor.black.withAlphaComponent(alpha))
+            navBar.setBackgroundAlpha(alpha: alpha)
+            navBar.setTintColor(color: UIColor.black.withAlphaComponent(alpha))
             navBar.titleLabelColor = UIColor.black.withAlphaComponent(alpha)
             statusBarStyle = .default
         } else {
-            navBar.ef_setBackgroundAlpha(alpha: 0)
-            navBar.ef_setTintColor(color: .white)
+            navBar.setBackgroundAlpha(alpha: 0)
+            navBar.setTintColor(color: .white)
             navBar.titleLabelColor = .white
             statusBarStyle = .lightContent
         }

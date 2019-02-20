@@ -28,91 +28,19 @@ import UIKit
 
 public class EFNavigationBar {
 
-    struct AssociatedKeys {   // default is system attributes
-        static var defaultNavBarBarTintColorKey: UIColor = UIColor.white
-        static var defaultNavBarBackgroundImageKey: UIImage = UIImage()
-        static var defaultNavBarTintColorKey: UIColor = UIColor(red: 0, green: 0.478431, blue: 1, alpha: 1.0)
-        static var defaultNavBarTitleColorKey: UIColor = UIColor.black
-        static var defaultStatusBarStyleKey: UIStatusBarStyle = UIStatusBarStyle.default
-        static var defaultShadowImageHiddenKey: Bool = false
-        static var defaultTransitionKey: EFTransition = EFTransitionMethod.linear
-    }
-    
-    public class var defaultNavBarBarTintColor: UIColor {
-        get {
-            return objc_getAssociatedObject(self, &AssociatedKeys.defaultNavBarBarTintColorKey) as? UIColor ?? AssociatedKeys.defaultNavBarBarTintColorKey
-        }
-        set {
-            objc_setAssociatedObject(self, &AssociatedKeys.defaultNavBarBarTintColorKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
-    }
-    
-    public class var defaultNavBarBackgroundImage: UIImage? {
-        get {
-            return objc_getAssociatedObject(self, &AssociatedKeys.defaultNavBarBackgroundImageKey) as? UIImage
-        }
-        set {
-            objc_setAssociatedObject(self, &AssociatedKeys.defaultNavBarBackgroundImageKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
-    }
-    
-    public class var defaultNavBarTintColor: UIColor {
-        get {
-            return objc_getAssociatedObject(self, &AssociatedKeys.defaultNavBarTintColorKey) as? UIColor ?? AssociatedKeys.defaultNavBarTintColorKey
-        }
-        set {
-            objc_setAssociatedObject(self, &AssociatedKeys.defaultNavBarTintColorKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
-    }
-    
-    public class var defaultNavBarTitleColor: UIColor {
-        get {
-            return objc_getAssociatedObject(self, &AssociatedKeys.defaultNavBarTitleColorKey) as? UIColor ?? AssociatedKeys.defaultNavBarTitleColorKey
-        }
-        set {
-            objc_setAssociatedObject(self, &AssociatedKeys.defaultNavBarTitleColorKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
-    }
-    
-    public class var defaultStatusBarStyle: UIStatusBarStyle {
-        get {
-            return objc_getAssociatedObject(self, &AssociatedKeys.defaultStatusBarStyleKey) as? UIStatusBarStyle ?? .default
-        }
-        set {
-            objc_setAssociatedObject(self, &AssociatedKeys.defaultStatusBarStyleKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
-    }
-    
-    public class var defaultShadowImageHidden: Bool {
-        get {
-            return objc_getAssociatedObject(self, &AssociatedKeys.defaultShadowImageHiddenKey) as? Bool ?? false
-        }
-        set {
-            objc_setAssociatedObject(self, &AssociatedKeys.defaultShadowImageHiddenKey, newValue, .OBJC_ASSOCIATION_ASSIGN)
-        }
-    }
+    public static var defaultNavBarBarTintColor: UIColor = UIColor.white
+    public static var defaultNavBarBackgroundImage: UIImage? = nil
+    public static var defaultNavBarTintColor: UIColor = UIColor(red: 0, green: 0.478431, blue: 1, alpha: 1.0)
+    public static var defaultNavBarTitleColor: UIColor = UIColor.black
+    public static var defaultStatusBarStyle: UIStatusBarStyle = UIStatusBarStyle.default
+    public static var defaultShadowImageHidden: Bool = false
+    public static var defaultTransition: EFTransition = EFTransitionMethod.linear
+    public static var defaultBackgroundAlpha: CGFloat = 1.0
 
-    public class var defaultTransition: EFTransition {
-        get {
-            return objc_getAssociatedObject(self, &AssociatedKeys.defaultTransitionKey) as? EFTransition ?? EFTransitionMethod.linear
-        }
-        set {
-            objc_setAssociatedObject(self, &AssociatedKeys.defaultTransitionKey, newValue, .OBJC_ASSOCIATION_ASSIGN)
-        }
-    }
-    
-    public class var defaultBackgroundAlpha: CGFloat {
-        get {
-            return 1.0
-        }
-    }
+    public static var defaultNavBarBottom: Int = UIDevice.isiPhoneX ? 88 : 64
 }
 
 public extension EFNavigationBar {
-
-    class func navBarBottom() -> Int {
-        return UIDevice.isiPhoneX ? 88 : 64
-    }
 
     class func tabBarHeight() -> Int {
         return UIDevice.isiPhoneX ? 83 : 49

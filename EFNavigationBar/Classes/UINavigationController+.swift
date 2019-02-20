@@ -40,7 +40,7 @@ public extension UINavigationController {
     }
     
     func setNeedsNavigationBarUpdate(barBackgroundAlpha: CGFloat) {
-        navigationBar.ef_setBackgroundAlpha(alpha: barBackgroundAlpha)
+        navigationBar.setBackgroundAlpha(alpha: barBackgroundAlpha)
     }
     
     func setNeedsNavigationBarUpdate(tintColor: UIColor) {

@@ -39,10 +39,10 @@ class MillcolorGradController: BaseViewController {
         view.insertSubview(navBar, aboveSubview: tableView)
         
         // 设置初始导航栏透明度
-        navBar.ef_setBackgroundAlpha(alpha: 0)
+        navBar.setBackgroundAlpha(alpha: 0)
         
         // 设置导航栏按钮和标题颜色
-        navBar.ef_setTintColor(color: .white)
+        navBar.setTintColor(color: .white)
         
         // 设置状态栏style
         statusBarStyle = .lightContent
@@ -60,9 +60,9 @@ extension MillcolorGradController {
         let offsetY = scrollView.contentOffset.y
         if (offsetY > NAVBAR_COLORCHANGE_POINT) {
             let alpha = (offsetY - NAVBAR_COLORCHANGE_POINT) / CGFloat(kNavBarBottom)
-            navBar.ef_setBackgroundAlpha(alpha: alpha)
+            navBar.setBackgroundAlpha(alpha: alpha)
         } else {
-            navBar.ef_setBackgroundAlpha(alpha: 0)
+            navBar.setBackgroundAlpha(alpha: 0)
         }
     }
 }

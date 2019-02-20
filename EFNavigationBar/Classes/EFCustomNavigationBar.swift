@@ -93,7 +93,7 @@ public class EFCustomNavigationBar: UIView {
     
     lazy var bottomLine: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(red: (218.0 / 255.0), green: (218.0 / 255.0), blue: (218.0 / 255.0), alpha: 1.0)
+        view.backgroundColor = UIColor(red: 218.0 / 255.0, green: 218.0 / 255.0, blue: 218.0 / 255.0, alpha: 1.0)
         return view
     }()
     
@@ -109,11 +109,7 @@ public class EFCustomNavigationBar: UIView {
     }()
     
     //  other variable
-    static var navBarBottom: Int {
-        get {
-            return UIDevice.isiPhoneX ? 88 : 64
-        }
-    }
+    static var navBarBottom: Int = EFNavigationBar.defaultNavBarBottom
     
     // init
     public class func CustomNavigationBar() -> EFCustomNavigationBar {
@@ -151,62 +147,62 @@ public class EFCustomNavigationBar: UIView {
         backgroundView.frame = self.bounds
         backgroundImageView.frame = self.bounds
         leftButton.frame = CGRect(x: margin, y: top, width: buttonWidth, height: buttonHeight)
-        rightButton.frame = CGRect(x: EFScreenWidth - buttonWidth-margin, y: top, width: buttonWidth, height: buttonHeight)
+        rightButton.frame = CGRect(x: EFScreenWidth - buttonWidth - margin, y: top, width: buttonWidth, height: buttonHeight)
         titleLabel.frame = CGRect(x: (EFScreenWidth - titleLabelWidth) / 2.0, y: top, width: titleLabelWidth, height: titleLabelHeight)
         bottomLine.frame = CGRect(x: 0, y: bounds.height - 0.5, width: EFScreenWidth, height: 0.5)
     }
 }
 
 public extension EFCustomNavigationBar {
-    func ef_setBottomLineHidden(hidden: Bool) {
+    func setBottomLineHidden(hidden: Bool) {
         bottomLine.isHidden = hidden
     }
-    func ef_setBackgroundAlpha(alpha: CGFloat) {
+    func setBackgroundAlpha(alpha: CGFloat) {
         backgroundView.alpha = alpha
         backgroundImageView.alpha = alpha
         bottomLine.alpha = alpha
     }
-    func ef_setTintColor(color: UIColor) {
+    func setTintColor(color: UIColor) {
         leftButton.setTitleColor(color, for: .normal)
         rightButton.setTitleColor(color, for: .normal)
         titleLabel.textColor = color
     }
     
     // 左右按钮共有方法
-    func ef_setLeftButton(normal: UIImage, highlighted: UIImage) {
-        ef_setLeftButton(normal: normal, highlighted: highlighted, title: nil, titleColor: nil)
+    func setLeftButton(normal: UIImage, highlighted: UIImage) {
+        setLeftButton(normal: normal, highlighted: highlighted, title: nil, titleColor: nil)
     }
-    func ef_setLeftButton(image: UIImage) {
-        ef_setLeftButton(normal: image, highlighted: image, title: nil, titleColor: nil)
+    func setLeftButton(image: UIImage) {
+        setLeftButton(normal: image, highlighted: image, title: nil, titleColor: nil)
     }
-    func ef_setLeftButton(title: String, titleColor: UIColor) {
-        ef_setLeftButton(normal: nil, highlighted: nil, title: title, titleColor: titleColor)
+    func setLeftButton(title: String, titleColor: UIColor) {
+        setLeftButton(normal: nil, highlighted: nil, title: title, titleColor: titleColor)
     }
     
-    func ef_setRightButton(normal: UIImage, highlighted: UIImage) {
-        ef_setRightButton(normal: normal, highlighted: highlighted, title: nil, titleColor: nil)
+    func setRightButton(normal: UIImage, highlighted: UIImage) {
+        setRightButton(normal: normal, highlighted: highlighted, title: nil, titleColor: nil)
     }
-    func ef_setRightButton(image: UIImage) {
-        ef_setRightButton(normal: image, highlighted: image, title: nil, titleColor: nil)
+    func setRightButton(image: UIImage) {
+        setRightButton(normal: image, highlighted: image, title: nil, titleColor: nil)
     }
-    func ef_setRightButton(title: String, titleColor: UIColor) {
-        ef_setRightButton(normal: nil, highlighted: nil, title: title, titleColor: titleColor)
+    func setRightButton(title: String, titleColor: UIColor) {
+        setRightButton(normal: nil, highlighted: nil, title: title, titleColor: titleColor)
     }
     
     // 左右按钮私有方法
-    private func ef_setLeftButton(normal: UIImage?, highlighted: UIImage?, title: String?, titleColor: UIColor?) {
-        leftButton.isHidden = false
-        leftButton.setImage(normal, for: .normal)
-        leftButton.setImage(highlighted, for: .highlighted)
-        leftButton.setTitle(title, for: .normal)
-        leftButton.setTitleColor(titleColor, for: .normal)
+    private func setLeftButton(normal: UIImage?, highlighted: UIImage?, title: String?, titleColor: UIColor?) {
+        setButton(isLeft: true, normal: normal, highlighted: highlighted, title: title, titleColor: titleColor)
     }
-    private func ef_setRightButton(normal: UIImage?, highlighted: UIImage?, title: String?, titleColor: UIColor?) {
-        rightButton.isHidden = false
-        rightButton.setImage(normal, for: .normal)
-        rightButton.setImage(highlighted, for: .highlighted)
-        rightButton.setTitle(title, for: .normal)
-        rightButton.setTitleColor(titleColor, for: .normal)
+    private func setRightButton(normal: UIImage?, highlighted: UIImage?, title: String?, titleColor: UIColor?) {
+        setButton(isLeft: false, normal: normal, highlighted: highlighted, title: title, titleColor: titleColor)
+    }
+    private func setButton(isLeft: Bool, normal: UIImage?, highlighted: UIImage?, title: String?, titleColor: UIColor?) {
+        let button: UIButton = isLeft ? leftButton : rightButton
+        button.isHidden = false
+        button.setImage(normal, for: .normal)
+        button.setImage(highlighted, for: .highlighted)
+        button.setTitle(title, for: .normal)
+        button.setTitleColor(titleColor, for: .normal)
     }
 }
 
@@ -217,7 +213,7 @@ public extension EFCustomNavigationBar {
         if let onClickLeft = onClickLeftButton {
             onClickLeft()
         } else {
-            let currentVC = UIViewController.ef_currentViewController()
+            let currentVC = UIViewController.currentViewController()
             currentVC.gotoLastViewController(animated: true)
         }
     }
