@@ -368,7 +368,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-EFNavigationBar_Example/Pods-EFNavigationBar_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-EFNavigationBar_Example/Pods-EFNavigationBar_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/EFNavigationBar/EFNavigationBar.framework",
 				"${BUILT_PRODUCTS_DIR}/WRCycleScrollView/WRCycleScrollView.framework",
 			);
@@ -381,7 +381,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EFNavigationBar_Example/Pods-EFNavigationBar_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EFNavigationBar_Example/Pods-EFNavigationBar_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

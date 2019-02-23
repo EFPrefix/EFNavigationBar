@@ -87,7 +87,9 @@ public extension UINavigationController {
         let newBarBackgroundAlpha: CGFloat = fromVC?.navBarTransition.mappingAlpha(fromAlpha: fromBarBackgroundAlpha, toAlpha: toBarBackgroundAlpha, percent: progress) ?? fromBarBackgroundAlpha
         setNeedsNavigationBarUpdate(barBackgroundAlpha: newBarBackgroundAlpha)
     }
-    
+}
+
+public extension UINavigationController {
     // call swizzling methods active 主动调用交换方法
     public static func fatherAwake() {
         DispatchQueue.once() {
@@ -97,7 +99,7 @@ public extension UINavigationController {
                 #selector(popToRootViewController),
                 #selector(pushViewController)
             ]
-            
+
             for selector in needSwizzleSelectorArr {
                 // _updateInteractiveTransition:  =>  ef_updateInteractiveTransition:
                 let str = ("ef_" + selector.description).replacingOccurrences(of: "__", with: "_")
@@ -108,7 +110,7 @@ public extension UINavigationController {
             }
         }
     }
-    
+
     //==========================================================================
     // MARK: swizzling pop
     //==========================================================================
@@ -121,7 +123,7 @@ public extension UINavigationController {
             return current / all
         }
     }
-    
+
     // swizzling system method: popToViewController
     @objc func ef_popToViewController(_ viewController: UIViewController, animated: Bool) -> [UIViewController]? {
         setNeedsNavigationBarUpdate(titleColor: viewController.navBarTitleColor)
@@ -140,7 +142,7 @@ public extension UINavigationController {
         CATransaction.commit()
         return vcs
     }
-    
+
     // swizzling system method: popToRootViewControllerAnimated
     @objc func ef_popToRootViewControllerAnimated(_ animated: Bool) -> [UIViewController]? {
         var displayLink: CADisplayLink? = CADisplayLink(target: self, selector: #selector(popNeedDisplay))
@@ -156,13 +158,13 @@ public extension UINavigationController {
         CATransaction.commit()
         return vcs
     }
-    
+
     // change navigationBar barTintColor smooth before pop to current VC finished
     @objc  func popNeedDisplay() {
         guard let topViewController = topViewController, let coordinator = topViewController.transitionCoordinator else {
             return
         }
-        
+
         popProperties.displayCount += 1
         let popProgress = popProperties.popProgress
         // print("第\(popProperties.displayCount)次pop的进度：\(popProgress)")
@@ -170,8 +172,8 @@ public extension UINavigationController {
         let toVC = coordinator.viewController(forKey: .to)
         updateNavigationBar(fromVC: fromVC, toVC: toVC, progress: popProgress)
     }
-    
-    
+
+
     //==========================================================================
     // MARK: swizzling push
     //==========================================================================
@@ -184,7 +186,7 @@ public extension UINavigationController {
             return current / all
         }
     }
-    
+
     // swizzling system method: pushViewController
     @objc func ef_pushViewController(_ viewController: UIViewController, animated: Bool) {
         var displayLink: CADisplayLink? = CADisplayLink(target: self, selector: #selector(pushNeedDisplay))
@@ -200,20 +202,34 @@ public extension UINavigationController {
         ef_pushViewController(viewController, animated: animated)
         CATransaction.commit()
     }
-    
+
     // change navigationBar barTintColor smooth before push to current VC finished or before pop to current VC finished
     @objc  func pushNeedDisplay() {
         guard let topViewController = topViewController,
             let coordinator       = topViewController.transitionCoordinator else {
                 return
         }
-        
+
         pushProperties.displayCount += 1
         let pushProgress = pushProperties.pushProgress
         // print("第\(pushProperties.displayCount)次push的进度：\(pushProgress)")
         let fromVC = coordinator.viewController(forKey: .from)
         let toVC = coordinator.viewController(forKey: .to)
         updateNavigationBar(fromVC: fromVC, toVC: toVC, progress: pushProgress)
+    }
+
+    // swizzling system method: _updateInteractiveTransition
+    @objc func ef_updateInteractiveTransition(_ percentComplete: CGFloat) {
+        guard let topViewController = topViewController, let coordinator = topViewController.transitionCoordinator else {
+            ef_updateInteractiveTransition(percentComplete)
+            return
+        }
+
+        let fromVC = coordinator.viewController(forKey: .from)
+        let toVC = coordinator.viewController(forKey: .to)
+        updateNavigationBar(fromVC: fromVC, toVC: toVC, progress: percentComplete)
+
+        ef_updateInteractiveTransition(percentComplete)
     }
 }
 
@@ -267,20 +283,5 @@ extension UINavigationController: UINavigationBarDelegate {
                 animations(.to)
             }
         }
-    }
-    
-    // swizzling system method: _updateInteractiveTransition
-    @objc func ef_updateInteractiveTransition(_ percentComplete: CGFloat) {
-        guard let topViewController = topViewController,
-            let coordinator       = topViewController.transitionCoordinator else {
-                ef_updateInteractiveTransition(percentComplete)
-                return
-        }
-        
-        let fromVC = coordinator.viewController(forKey: .from)
-        let toVC = coordinator.viewController(forKey: .to)
-        updateNavigationBar(fromVC: fromVC, toVC: toVC, progress: percentComplete)
-        
-        ef_updateInteractiveTransition(percentComplete)
     }
 }

@@ -67,7 +67,7 @@ public extension UINavigationBar {
                 frame: CGRect(
                     x: 0,
                     y: 0,
-                    width: Int(bounds.width),
+                    width: bounds.width,
                     height: EFNavigationBar.defaultNavBarBottom
                 )
             )
@@ -89,7 +89,7 @@ public extension UINavigationBar {
                 frame: CGRect(
                     x: 0,
                     y: 0,
-                    width: Int(bounds.width),
+                    width: bounds.width,
                     height: EFNavigationBar.defaultNavBarBottom
                 )
             )
@@ -157,14 +157,18 @@ public extension UINavigationBar {
     func ef_getTranslationY() -> CGFloat {
         return transform.ty
     }
-    
+}
+
+// MARK:- Method swizzling
+public extension UINavigationBar {
+
     // call swizzling methods active 主动调用交换方法
     public static func efAwake() {
         DispatchQueue.once() {
             let needSwizzleSelectorArr = [
                 #selector(setter: titleTextAttributes)
             ]
-            
+
             for selector in needSwizzleSelectorArr {
                 let str = ("ef_" + selector.description)
                 if let originalMethod = class_getInstanceMethod(self, selector),
@@ -174,20 +178,18 @@ public extension UINavigationBar {
             }
         }
     }
-    
-    //==========================================================================
-    // MARK: swizzling pop
-    //==========================================================================
+
+    // swizzling pop
     @objc func ef_setTitleTextAttributes(_ newTitleTextAttributes:[String : Any]?) {
         guard var attributes = newTitleTextAttributes else {
             return
         }
-        
+
         guard let originTitleTextAttributes = titleTextAttributes else {
             ef_setTitleTextAttributes(attributes)
             return
         }
-        
+
         var titleColor: UIColor?
         for attribute in originTitleTextAttributes {
             if attribute.key == NSAttributedString.Key.foregroundColor {
@@ -195,12 +197,12 @@ public extension UINavigationBar {
                 break
             }
         }
-        
+
         guard let originTitleColor = titleColor else {
             ef_setTitleTextAttributes(attributes)
             return
         }
-        
+
         if attributes[NSAttributedString.Key.foregroundColor.rawValue] == nil {
             attributes.updateValue(originTitleColor, forKey: NSAttributedString.Key.foregroundColor.rawValue)
         }

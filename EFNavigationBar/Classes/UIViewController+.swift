@@ -281,6 +281,34 @@ public extension UIViewController {
         }
     }
 
+    func canUpdateNavigationBar() -> Bool {
+        let viewFrame: CGRect = view.frame
+        let maxFrame: CGRect = UIScreen.main.bounds
+        let middleFrame: CGRect = CGRect(
+            x: 0,
+            y: EFNavigationBar.defaultNavBarBottom,
+            width: maxFrame.size.width,
+            height: maxFrame.size.height - EFNavigationBar.defaultNavBarBottom
+        )
+        let minFrame: CGRect = CGRect(
+            x: 0,
+            y: EFNavigationBar.defaultNavBarBottom,
+            width: maxFrame.size.width,
+            height: maxFrame.size.height - EFNavigationBar.defaultNavBarBottom - EFNavigationBar.defaultTabBarHeight
+        )
+        // 蝙蝠🦇
+        let isBat = viewFrame.equalTo(maxFrame) || viewFrame.equalTo(middleFrame) || viewFrame.equalTo(minFrame)
+        if self.navigationController != nil && isBat == true {
+            return true
+        } else {
+            return false
+        }
+    }
+}
+
+// MARK:- Method swizzling
+public extension UIViewController {
+
     // swizzling two system methods: viewWillAppear(_:) and viewWillDisappear(_:)
     @objc public static func efAwake() {
         DispatchQueue.once() {
@@ -333,29 +361,5 @@ public extension UIViewController {
             navigationController?.setNeedsNavigationBarUpdate(hideShadowImage: navBarShadowImageHidden)
         }
         ef_viewDidAppear(animated)
-    }
-
-    func canUpdateNavigationBar() -> Bool {
-        let viewFrame = view.frame
-        let maxFrame = UIScreen.main.bounds
-        let middleFrame = CGRect(
-            x: 0,
-            y: EFNavigationBar.defaultNavBarBottom,
-            width: EFNavigationBar.screenWidth(),
-            height: EFNavigationBar.screenHeight() - EFNavigationBar.defaultNavBarBottom
-        )
-        let minFrame = CGRect(
-            x: 0,
-            y: EFNavigationBar.defaultNavBarBottom,
-            width: EFNavigationBar.screenWidth(),
-            height: EFNavigationBar.screenHeight() - EFNavigationBar.defaultNavBarBottom - EFNavigationBar.tabBarHeight()
-        )
-        // 蝙蝠🦇
-        let isBat = viewFrame.equalTo(maxFrame) || viewFrame.equalTo(middleFrame) || viewFrame.equalTo(minFrame)
-        if self.navigationController != nil && isBat == true {
-            return true
-        } else {
-            return false
-        }
     }
 }

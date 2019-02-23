@@ -109,7 +109,7 @@ public class EFCustomNavigationBar: UIView {
     }()
     
     //  other variable
-    static var navBarBottom: Int = EFNavigationBar.defaultNavBarBottom
+    static var navBarBottom: CGFloat = EFNavigationBar.defaultNavBarBottom
     
     // init
     public class func CustomNavigationBar() -> EFCustomNavigationBar {
