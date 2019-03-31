@@ -3,11 +3,10 @@ platform :ios, '8.0'
 
 target 'EFNavigationBar_Example' do
   pod 'EFNavigationBar', :path => '../'
-  pod 'WRCycleScrollView', :git => 'https://github.com/EFRenovation/WRCycleScrollView.git'
-
+  
   target 'EFNavigationBar_Tests' do
     inherit! :search_paths
-
+    
     
   end
 end

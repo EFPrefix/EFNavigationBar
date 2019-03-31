@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
     s.description      = <<-DESC
     EFNavigationBar - An ordinary custom navigation bar, in Swift.
     DESC
-
+    
     s.homepage         = 'https://github.com/EFPrefix/EFNavigationBar'
     s.screenshots      = 'https://github.com/EFPrefix/EFNavigationBar/blob/master/Assets/EFNavigationBar.png'
     s.license          = { :type => 'MIT', :file => 'LICENSE' }
