@@ -7,27 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		124680B722196999002D116B /* README_CN.md in Resources */ = {isa = PBXBuildFile; fileRef = 124680B622196999002D116B /* README_CN.md */; };
-		12D4A8632217C205002C75B5 /* QQAppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D4A8522217C203002C75B5 /* QQAppController.swift */; };
-		12D4A8642217C205002C75B5 /* QQMineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D4A8532217C203002C75B5 /* QQMineController.swift */; };
-		12D4A8652217C205002C75B5 /* QQZoneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D4A8542217C204002C75B5 /* QQZoneController.swift */; };
 		12D4A8662217C205002C75B5 /* MillcolorGradController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D4A8552217C204002C75B5 /* MillcolorGradController.swift */; };
-		12D4A8672217C205002C75B5 /* AllTransparent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D4A8562217C204002C75B5 /* AllTransparent.swift */; };
-		12D4A8682217C205002C75B5 /* ZhiHuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D4A8572217C204002C75B5 /* ZhiHuController.swift */; };
 		12D4A8692217C205002C75B5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D4A8582217C204002C75B5 /* BaseViewController.swift */; };
 		12D4A86A2217C205002C75B5 /* ImageNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D4A8592217C204002C75B5 /* ImageNavController.swift */; };
-		12D4A86B2217C205002C75B5 /* MoveListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D4A85A2217C204002C75B5 /* MoveListController.swift */; };
-		12D4A86C2217C205002C75B5 /* WeiBoMineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D4A85B2217C204002C75B5 /* WeiBoMineController.swift */; };
 		12D4A86D2217C205002C75B5 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D4A85C2217C204002C75B5 /* BaseNavigationController.swift */; };
-		12D4A86E2217C205002C75B5 /* SixthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D4A85D2217C204002C75B5 /* SixthViewController.swift */; };
 		12D4A86F2217C205002C75B5 /* CustomNavBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D4A85E2217C204002C75B5 /* CustomNavBarController.swift */; };
 		12D4A8702217C205002C75B5 /* CustomListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D4A85F2217C204002C75B5 /* CustomListController.swift */; };
-		12D4A8712217C205002C75B5 /* AntForestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D4A8602217C204002C75B5 /* AntForestController.swift */; };
-		12D4A8722217C205002C75B5 /* NormalListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D4A8612217C204002C75B5 /* NormalListController.swift */; };
-		12D4A8732217C205002C75B5 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D4A8622217C204002C75B5 /* SecondViewController.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
-		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
@@ -47,30 +34,18 @@
 
 /* Begin PBXFileReference section */
 		124680B622196999002D116B /* README_CN.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README_CN.md; path = ../README_CN.md; sourceTree = "<group>"; };
-		12D4A8522217C203002C75B5 /* QQAppController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QQAppController.swift; sourceTree = "<group>"; };
-		12D4A8532217C203002C75B5 /* QQMineController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QQMineController.swift; sourceTree = "<group>"; };
-		12D4A8542217C204002C75B5 /* QQZoneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QQZoneController.swift; sourceTree = "<group>"; };
 		12D4A8552217C204002C75B5 /* MillcolorGradController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MillcolorGradController.swift; sourceTree = "<group>"; };
-		12D4A8562217C204002C75B5 /* AllTransparent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTransparent.swift; sourceTree = "<group>"; };
-		12D4A8572217C204002C75B5 /* ZhiHuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZhiHuController.swift; sourceTree = "<group>"; };
 		12D4A8582217C204002C75B5 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		12D4A8592217C204002C75B5 /* ImageNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageNavController.swift; sourceTree = "<group>"; };
-		12D4A85A2217C204002C75B5 /* MoveListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveListController.swift; sourceTree = "<group>"; };
-		12D4A85B2217C204002C75B5 /* WeiBoMineController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeiBoMineController.swift; sourceTree = "<group>"; };
 		12D4A85C2217C204002C75B5 /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
-		12D4A85D2217C204002C75B5 /* SixthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SixthViewController.swift; sourceTree = "<group>"; };
 		12D4A85E2217C204002C75B5 /* CustomNavBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavBarController.swift; sourceTree = "<group>"; };
 		12D4A85F2217C204002C75B5 /* CustomListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomListController.swift; sourceTree = "<group>"; };
-		12D4A8602217C204002C75B5 /* AntForestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntForestController.swift; sourceTree = "<group>"; };
-		12D4A8612217C204002C75B5 /* NormalListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormalListController.swift; sourceTree = "<group>"; };
-		12D4A8622217C204002C75B5 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		21B6E99A837B89C060C56BD9 /* Pods-EFNavigationBar_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EFNavigationBar_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EFNavigationBar_Example/Pods-EFNavigationBar_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		472677B27A2C5A211D4284DE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* EFNavigationBar_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EFNavigationBar_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* EFNavigationBar_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EFNavigationBar_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,24 +105,13 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				12D4A8562217C204002C75B5 /* AllTransparent.swift */,
-				12D4A8602217C204002C75B5 /* AntForestController.swift */,
 				12D4A85C2217C204002C75B5 /* BaseNavigationController.swift */,
 				12D4A8582217C204002C75B5 /* BaseViewController.swift */,
 				12D4A85F2217C204002C75B5 /* CustomListController.swift */,
 				12D4A85E2217C204002C75B5 /* CustomNavBarController.swift */,
 				12D4A8592217C204002C75B5 /* ImageNavController.swift */,
 				12D4A8552217C204002C75B5 /* MillcolorGradController.swift */,
-				12D4A85A2217C204002C75B5 /* MoveListController.swift */,
-				12D4A8612217C204002C75B5 /* NormalListController.swift */,
-				12D4A8522217C203002C75B5 /* QQAppController.swift */,
-				12D4A8532217C203002C75B5 /* QQMineController.swift */,
-				12D4A8542217C204002C75B5 /* QQZoneController.swift */,
-				12D4A8622217C204002C75B5 /* SecondViewController.swift */,
-				12D4A85D2217C204002C75B5 /* SixthViewController.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				12D4A85B2217C204002C75B5 /* WeiBoMineController.swift */,
-				12D4A8572217C204002C75B5 /* ZhiHuController.swift */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			name = "Example for EFNavigationBar";
@@ -157,7 +121,6 @@
 		607FACD31AFB9204008FA782 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD41AFB9204008FA782 /* Info.plist */,
@@ -266,10 +229,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = P3X2725LYY;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = P3X2725LYY;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -280,6 +245,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -299,8 +265,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
-				124680B722196999002D116B /* README_CN.md in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -391,25 +355,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12D4A8722217C205002C75B5 /* NormalListController.swift in Sources */,
 				12D4A8702217C205002C75B5 /* CustomListController.swift in Sources */,
 				12D4A86D2217C205002C75B5 /* BaseNavigationController.swift in Sources */,
-				12D4A8732217C205002C75B5 /* SecondViewController.swift in Sources */,
-				12D4A86E2217C205002C75B5 /* SixthViewController.swift in Sources */,
-				12D4A8642217C205002C75B5 /* QQMineController.swift in Sources */,
 				12D4A86F2217C205002C75B5 /* CustomNavBarController.swift in Sources */,
-				12D4A86B2217C205002C75B5 /* MoveListController.swift in Sources */,
-				12D4A8672217C205002C75B5 /* AllTransparent.swift in Sources */,
-				12D4A86C2217C205002C75B5 /* WeiBoMineController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				12D4A86A2217C205002C75B5 /* ImageNavController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
-				12D4A8682217C205002C75B5 /* ZhiHuController.swift in Sources */,
 				12D4A8692217C205002C75B5 /* BaseViewController.swift in Sources */,
-				12D4A8712217C205002C75B5 /* AntForestController.swift in Sources */,
 				12D4A8662217C205002C75B5 /* MillcolorGradController.swift in Sources */,
-				12D4A8652217C205002C75B5 /* QQZoneController.swift in Sources */,
-				12D4A8632217C205002C75B5 /* QQAppController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,14 +385,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		607FACD91AFB9204008FA782 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				607FACDA1AFB9204008FA782 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		607FACDE1AFB9204008FA782 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -561,7 +506,7 @@
 			baseConfigurationReference = 21B6E99A837B89C060C56BD9 /* Pods-EFNavigationBar_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = P3X2725LYY;
 				INFOPLIST_FILE = EFNavigationBar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -577,7 +522,7 @@
 			baseConfigurationReference = E78D4F870DB6F4839A62109B /* Pods-EFNavigationBar_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = P3X2725LYY;
 				INFOPLIST_FILE = EFNavigationBar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -592,7 +537,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8D3D787C450A04A565687641 /* Pods-EFNavigationBar_Tests.debug.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = P3X2725LYY;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -615,7 +560,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EE6A8DBDF091234C41257C2A /* Pods-EFNavigationBar_Tests.release.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = P3X2725LYY;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

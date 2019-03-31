@@ -14,6 +14,7 @@ let kScreenWidth = UIScreen.main.bounds.width
 let kScreenHeight = UIScreen.main.bounds.height
 let kTabBarHeight = EFNavigationBar.defaultTabBarHeight
 let kNavBarHeight = 44
+let kNavBarBottom = EFNavigationBar.defaultNavBarBottom
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,29 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow.init(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
 
-        let firstNav = BaseNavigationController.init(rootViewController: NormalListController())
-        let secondNav = BaseNavigationController.init(rootViewController: CustomListController())
-        let thirdNav = BaseNavigationController.init(rootViewController: MoveListController())
-        let tabBarVC = UITabBarController.init()
-        tabBarVC.viewControllers = [firstNav, secondNav, thirdNav]
-        setTabBarItems(tabBarVC: tabBarVC)
-
-        window?.rootViewController = tabBarVC
+        window?.rootViewController = BaseNavigationController(rootViewController: CustomListController())
         setNavBarAppearence()
         window?.makeKeyAndVisible()
 
         return true
-    }
-
-    func setTabBarItems(tabBarVC: UITabBarController) {
-        let titles = ["常用",  "自定义导航栏", "移动导航栏"]
-        let normalImages = ["mine", "mine", "mine"]
-        let highlightImages = ["mineHighlight", "mineHighlight", "mineHighlight"]
-        for (index, item) in (tabBarVC.tabBar.items ?? []).enumerated() {
-            item.title = titles[index]
-            item.image = UIImage(named: normalImages[index])?.withRenderingMode(.alwaysOriginal)
-            item.selectedImage = UIImage(named: highlightImages[index])?.withRenderingMode(.alwaysOriginal)
-        }
     }
 
     func setNavBarAppearence() {

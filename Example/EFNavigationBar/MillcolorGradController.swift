@@ -45,7 +45,7 @@ class MillcolorGradController: BaseViewController {
         navBar.setTintColor(color: .white)
         
         // 设置状态栏style
-        statusBarStyle = .lightContent
+        //statusBarStyle = .lightContent
     }
     
     deinit {

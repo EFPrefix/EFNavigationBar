@@ -61,7 +61,7 @@ EFNavigationBar.defaultTransition = .linear
 
 ## Other
 
-- The original code of [EFNavigationBar](https://github.com/EFPrefix/EFNavigationBar) come from [WRNavigationBar_swift](https://github.com/wangrui460/WRNavigationBar_swift/commit/a445f74ac57d675f87a60a49a745c5a3b01b6324), since the `WRNavigationBar_swift` project seems to be no longer maintained, so `EFNavigationBar` project has been established;
+- [EFNavigationBar](https://github.com/EFPrefix/EFNavigationBar) based on [WRNavigationBar_swift](https://github.com/wangrui460/WRNavigationBar_swift/commit/a445f74ac57d675f87a60a49a745c5a3b01b6324);
 - For Objective-C version, see [WRNavigationBar](https://github.com/wangrui460/WRNavigationBar).
 
 ## Maintainer

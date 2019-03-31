@@ -67,12 +67,12 @@ extension CustomNavBarController {
             navBar.setBackgroundAlpha(alpha: alpha)
             navBar.setTintColor(color: UIColor.black.withAlphaComponent(alpha))
             navBar.titleLabelColor = UIColor.black.withAlphaComponent(alpha)
-            statusBarStyle = .default
+            //statusBarStyle = .default
         } else {
             navBar.setBackgroundAlpha(alpha: 0)
             navBar.setTintColor(color: .white)
             navBar.titleLabelColor = .white
-            statusBarStyle = .lightContent
+            //statusBarStyle = .lightContent
         }
     }
 }

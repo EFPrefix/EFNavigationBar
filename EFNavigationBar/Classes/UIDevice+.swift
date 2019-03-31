@@ -1,5 +1,5 @@
 //
-//  UIViewController+.swift
+//  UIDevice+.swift
 //  EFNavigationBar
 //
 //  Created by EyreFree on 2019/2/16.
