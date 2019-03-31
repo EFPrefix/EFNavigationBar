@@ -1,5 +1,5 @@
 PODS:
-  - EFNavigationBar (0.1.2)
+  - EFNavigationBar (5.0.0)
   - WRCycleScrollView (0.1.0)
 
 DEPENDENCIES:
@@ -18,9 +18,9 @@ CHECKOUT OPTIONS:
     :git: https://github.com/EFRenovation/WRCycleScrollView.git
 
 SPEC CHECKSUMS:
-  EFNavigationBar: 77c697591e195bed267c4545fd07d1592220a3f9
+  EFNavigationBar: 60fe65595154b23114c00cf14d81d67cb1d63a6f
   WRCycleScrollView: 6df3059c5c7a84c16d65b662d4ebbb420adb10c9
 
 PODFILE CHECKSUM: 179ab57339e6ec50095cf232cd185d03d2ce2e95
 
-COCOAPODS: 1.6.0
+COCOAPODS: 1.6.1

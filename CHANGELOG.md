@@ -2,6 +2,13 @@
 
 -----
 
+## [5.0.0](https://github.com/EFPrefix/EFNavigationBar/releases/tag/5.0.0) (2019-03-31)
+
+- Upgrade to Swift 5.0;
+- Remove native extensions.
+
+---
+
 ## [0.1.2](https://github.com/EFPrefix/EFNavigationBar/releases/tag/0.1.2) (2019-02-21)
 
 Change default vaalue implementation.
