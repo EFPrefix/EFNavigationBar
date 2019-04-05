@@ -1,4 +1,4 @@
-![](Assets/EFNavigationBar.png)
+![](https://raw.githubusercontent.com/EFPrefix/EFNavigationBar/master/Assets/EFNavigationBar.png)
 
 [![CI Status](https://img.shields.io/travis/EFPrefix/EFNavigationBar.svg?style=flat)](https://travis-ci.org/EFPrefix/EFNavigationBar)
 [![Version](https://img.shields.io/cocoapods/v/EFNavigationBar.svg?style=flat)](https://cocoapods.org/pods/EFNavigationBar)
@@ -7,17 +7,17 @@
 
 An ordinary custom navigation bar.
 
-> [中文介绍](README_CN.md)
+> [中文介绍](https://github.com/EFPrefix/EFNavigationBar/blob/master/README_CN.md)
 
 ## Overview
 
 |Gradation|Image|Weibo|Q Zone|
 |:-:|:-:|:-:|:-:|
-|![](Assets/导航栏显示渐变色.gif)|![](Assets/导航栏显示图片.gif)|![](Assets/新浪微博个人中心.gif)|![](Assets/qq空间.gif)|
+|![](https://github.com/EFPrefix/EFNavigationBar/blob/master/Assets/导航栏显示渐变色.gif)|![](https://github.com/EFPrefix/EFNavigationBar/blob/master/Assets/导航栏显示图片.gif)|![](https://github.com/EFPrefix/EFNavigationBar/blob/master/Assets/新浪微博个人中心.gif)|![](https://github.com/EFPrefix/EFNavigationBar/blob/master/Assets/qq空间.gif)|
 
 |Zhihu|QQ|Alipay|Transparent gradient|
 |:-:|:-:|:-:|:-:|
-|![](Assets/知乎日报.gif)|![](Assets/QQ我的资料页.gif)|![](Assets/蚂蚁森林.gif)|![](Assets/连续多个界面导航栏透明.gif)|
+|![](https://github.com/EFPrefix/EFNavigationBar/blob/master/Assets/知乎日报.gif)|![](https://github.com/EFPrefix/EFNavigationBar/blob/master/Assets/QQ我的资料页.gif)|![](https://github.com/EFPrefix/EFNavigationBar/blob/master/Assets/蚂蚁森林.gif)|![](https://github.com/EFPrefix/EFNavigationBar/blob/master/Assets/连续多个界面导航栏透明.gif)|
 
 ## Example
 
@@ -74,4 +74,4 @@ EyreFree, eyrefree@eyrefree.org
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/License_icon-mit-88x31-2.svg/128px-License_icon-mit-88x31-2.svg.png">
 
-EFNavigationBar is available under the MIT license. See the [LICENSE](LICENSE) file for more info.
+EFNavigationBar is available under the MIT license. See the [LICENSE](https://github.com/EFPrefix/EFNavigationBar/blob/master/LICENSE) file for more info.

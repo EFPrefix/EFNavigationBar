@@ -1,4 +1,4 @@
-![](Assets/EFNavigationBar.png)
+![](https://github.com/EFPrefix/EFNavigationBar/blob/master/Assets/EFNavigationBar.png)
 
 [![CI Status](https://img.shields.io/travis/EFPrefix/EFNavigationBar.svg?style=flat)](https://travis-ci.org/EFPrefix/EFNavigationBar)
 [![Version](https://img.shields.io/cocoapods/v/EFNavigationBar.svg?style=flat)](https://cocoapods.org/pods/EFNavigationBar)
@@ -14,11 +14,11 @@
 
 |导航栏显示渐变色|导航栏显示图片|新浪微博个人中心|QQ 空间|
 |:-:|:-:|:-:|:-:|
-|![](Assets/导航栏显示渐变色.gif)|![](Assets/导航栏显示图片.gif)|![](Assets/新浪微博个人中心.gif)|![](Assets/qq空间.gif)|
+|![](https://github.com/EFPrefix/EFNavigationBar/blob/master/Assets/导航栏显示渐变色.gif)|![](https://github.com/EFPrefix/EFNavigationBar/blob/master/Assets/导航栏显示图片.gif)|![](https://github.com/EFPrefix/EFNavigationBar/blob/master/Assets/新浪微博个人中心.gif)|![](https://github.com/EFPrefix/EFNavigationBar/blob/master/Assets/qq空间.gif)|
 
 |知乎日报|QQ 我的资料页|蚂蚁森林|连续多个界面导航栏透明|
 |:-:|:-:|:-:|:-:|
-|![](Assets/知乎日报.gif)|![](Assets/QQ我的资料页.gif)|![](Assets/蚂蚁森林.gif)|![](Assets/连续多个界面导航栏透明.gif)|
+|![](https://github.com/EFPrefix/EFNavigationBar/blob/master/Assets/知乎日报.gif)|![](https://github.com/EFPrefix/EFNavigationBar/blob/master/Assets/QQ我的资料页.gif)|![](https://github.com/EFPrefix/EFNavigationBar/blob/master/Assets/蚂蚁森林.gif)|![](https://github.com/EFPrefix/EFNavigationBar/blob/master/Assets/连续多个界面导航栏透明.gif)|
 
 ## 示例
 
@@ -100,4 +100,4 @@ EyreFree, eyrefree@eyrefree.org
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/License_icon-mit-88x31-2.svg/128px-License_icon-mit-88x31-2.svg.png">
 
-EFNavigationBar 基于 MIT 协议进行分发和使用，更多信息参见 [协议文件](LICENSE)。
+EFNavigationBar 基于 MIT 协议进行分发和使用，更多信息参见 [协议文件](https://github.com/EFPrefix/EFNavigationBar/blob/master/LICENSE)。

@@ -24,11 +24,11 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-import Foundation
+import UIKit
 
 // MARK: - Router
 public extension UIViewController {
-
+    
     // https://www.jianshu.com/p/1cab96bcbde9
     func gotoLastViewController(animated: Bool, completion: (() -> Void)? = nil) {
         if let navigationController = self.navigationController {
@@ -44,7 +44,7 @@ public extension UIViewController {
             self.dismiss(animated: animated, completion: completion)
         }
     }
-
+    
     class func currentViewController() -> UIViewController {
         if let rootVC = UIApplication.shared.delegate?.window??.rootViewController {
             return self.currentViewController(from: rootVC)
@@ -52,7 +52,7 @@ public extension UIViewController {
             return UIViewController()
         }
     }
-
+    
     class func currentViewController(from viewController: UIViewController) -> UIViewController {
         if let navigationController = viewController as? UINavigationController, let subViewController = navigationController.viewControllers.last {
             return currentViewController(from: subViewController)
@@ -62,6 +62,26 @@ public extension UIViewController {
             return currentViewController(from: presentedViewController)
         } else {
             return viewController
+        }
+    }
+}
+
+public extension UIViewController {
+    struct AssociatedKeys {
+        static var statusBarStyle: String = "statusBarStyle"
+    }
+    
+    // statusBarStyle
+    var statusBarStyle: UIStatusBarStyle {
+        get {
+            guard let style = objc_getAssociatedObject(self, &AssociatedKeys.statusBarStyle) as? UIStatusBarStyle else {
+                return EFNavigationBar.defaultStatusBarStyle
+            }
+            return style
+        }
+        set {
+            objc_setAssociatedObject(self, &AssociatedKeys.statusBarStyle, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            setNeedsStatusBarAppearanceUpdate()
         }
     }
 }

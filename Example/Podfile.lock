@@ -1,5 +1,5 @@
 PODS:
-  - EFNavigationBar (5.0.0)
+  - EFNavigationBar (5.0.1)
 
 DEPENDENCIES:
   - EFNavigationBar (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  EFNavigationBar: 60fe65595154b23114c00cf14d81d67cb1d63a6f
+  EFNavigationBar: 34ad21b279d71daf3a81b74d3d1823fd63d41314
 
 PODFILE CHECKSUM: f52cce4aac45a9dffbb471714ab719042b954a3a
 

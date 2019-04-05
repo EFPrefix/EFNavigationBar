@@ -2,6 +2,10 @@
 
 -----
 
+## [5.0.1](https://github.com/EFPrefix/EFNavigationBar/releases/tag/5.0.1) (2019-04-05)
+
+- Bring `statusBarStyle` back.
+
 ## [5.0.0](https://github.com/EFPrefix/EFNavigationBar/releases/tag/5.0.0) (2019-03-31)
 
 - Upgrade to Swift 5.0;
