@@ -37,6 +37,6 @@ public class EFNavigationBar {
     public static var defaultTransition: EFTransition = EFTransitionMethod.linear
     public static var defaultBackgroundAlpha: CGFloat = 1.0
 
-    public static var defaultNavBarBottom: CGFloat = UIDevice.isiPhoneX ? 88 : 64
-    public static var defaultTabBarHeight: CGFloat = UIDevice.isiPhoneX ? 83 : 49
+    public static var defaultNavBarBottom: CGFloat = UIDevice.isiPhoneXSeries ? 88 : 64
+    public static var defaultTabBarHeight: CGFloat = UIDevice.isiPhoneXSeries ? 83 : 49
 }

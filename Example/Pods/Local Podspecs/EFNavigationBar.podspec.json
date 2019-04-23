@@ -4,7 +4,7 @@
   "summary": "An ordinary custom navigation bar.",
   "description": "EFNavigationBar - An ordinary custom navigation bar, in Swift.",
   "homepage": "https://github.com/EFPrefix/EFNavigationBar",
-  "screenshots": "https://github.com/EFPrefix/EFNavigationBar/blob/master/Assets/EFNavigationBar.png",
+  "screenshots": "https://raw.githubusercontent.com/EFPrefix/EFNavigationBar/master/Assets/EFNavigationBar.png",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -22,5 +22,10 @@
     "ios": "8.0"
   },
   "requires_arc": true,
-  "source_files": "EFNavigationBar/Classes/**/*"
+  "source_files": "EFNavigationBar/Classes/**/*",
+  "dependencies": {
+    "DeviceKit": [
+      "~> 2.0.0"
+    ]
+  }
 }

@@ -1,15 +1,22 @@
 PODS:
-  - EFNavigationBar (5.0.1)
+  - DeviceKit (2.0.0)
+  - EFNavigationBar (5.0.1):
+    - DeviceKit (~> 2.0.0)
 
 DEPENDENCIES:
   - EFNavigationBar (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - DeviceKit
 
 EXTERNAL SOURCES:
   EFNavigationBar:
     :path: "../"
 
 SPEC CHECKSUMS:
-  EFNavigationBar: 34ad21b279d71daf3a81b74d3d1823fd63d41314
+  DeviceKit: 72d36709552d4b3582abd76a53949148acad9811
+  EFNavigationBar: b8d5ccfc51e335ba372870f8d26bacbb78eeb5cc
 
 PODFILE CHECKSUM: f52cce4aac45a9dffbb471714ab719042b954a3a
 

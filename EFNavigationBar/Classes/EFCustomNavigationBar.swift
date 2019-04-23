@@ -137,7 +137,7 @@ public class EFCustomNavigationBar: UIView {
         backgroundView.backgroundColor = EFDefaultBackgroundColor
     }
     public func updateFrame() {
-        let top: CGFloat = UIDevice.isiPhoneX ? 44 : 20
+        let top: CGFloat = UIDevice.isiPhoneXSeries ? 44 : 20
         let margin: CGFloat = 0
         let buttonHeight: CGFloat = 44
         let buttonWidth: CGFloat = 44
