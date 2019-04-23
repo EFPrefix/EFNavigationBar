@@ -2,6 +2,12 @@
 
 -----
 
+## [5.0.2](https://github.com/EFPrefix/EFNavigationBar/releases/tag/5.0.2) (2019-04-23)
+
+- Differentiating devices by `DeviceKit`.
+
+---
+
 ## [5.0.1](https://github.com/EFPrefix/EFNavigationBar/releases/tag/5.0.1) (2019-04-05)
 
 - Bring `statusBarStyle` back.

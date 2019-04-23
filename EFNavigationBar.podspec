@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'EFNavigationBar'
-    s.version          = '5.0.1'
+    s.version          = '5.0.2'
     s.summary          = 'An ordinary custom navigation bar.'
     
     s.description      = <<-DESC

@@ -1,9 +1,28 @@
 ![](https://raw.githubusercontent.com/EFPrefix/EFNavigationBar/master/Assets/EFNavigationBar.png)
 
-[![CI Status](https://img.shields.io/travis/EFPrefix/EFNavigationBar.svg?style=flat)](https://travis-ci.org/EFPrefix/EFNavigationBar)
-[![Version](https://img.shields.io/cocoapods/v/EFNavigationBar.svg?style=flat)](https://cocoapods.org/pods/EFNavigationBar)
-[![License](https://img.shields.io/cocoapods/l/EFNavigationBar.svg?style=flat)](https://cocoapods.org/pods/EFNavigationBar)
-[![Platform](https://img.shields.io/cocoapods/p/EFNavigationBar.svg?style=flat)](https://cocoapods.org/pods/EFNavigationBar)
+<p align="center">
+    <a href="https://travis-ci.org/EFPrefix/EFNavigationBar">
+    	<img src="https://img.shields.io/travis/EFPrefix/EFNavigationBar.svg">
+    </a>
+    <a href="https://cocoapods.org/pods/EFNavigationBar">
+    	<img src="https://img.shields.io/cocoapods/v/EFNavigationBar.svg?style=flat">
+    </a>
+    <a href="https://cocoapods.org/pods/EFNavigationBar">
+    	<img src="https://img.shields.io/cocoapods/p/EFNavigationBar.svg?style=flat">
+    </a>
+    <a href="https://github.com/apple/swift">
+    	<img src="https://img.shields.io/badge/language-swift-orange.svg">
+    </a>
+    <a href="https://raw.githubusercontent.com/EFPrefix/EFNavigationBar/master/LICENSE">
+    	<img src="https://img.shields.io/cocoapods/l/EFNavigationBar.svg?style=flat">
+    </a>
+    <a href="https://twitter.com/EyreFree777">
+    	<img src="https://img.shields.io/badge/twitter-@EyreFree777-blue.svg?style=flat">
+    </a>
+    <a href="https://www.weibo.com/eyrefree777">
+    	<img src="https://img.shields.io/badge/weibo-@EyreFree-red.svg?style=flat">
+    </a>
+</p>
 
 An ordinary custom navigation bar.
 
