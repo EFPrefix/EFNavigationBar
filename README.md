@@ -73,11 +73,10 @@ navBarShadowImageHidden = true
 navBarTransition = .linear
 
 // Global
-EFNavigationBar.defaultNavBarBarTintColor = UIColor.init(red: 0 / 255.0, green: 175 / 255.0, blue: 240 / 255.0, alpha: 1)
-EFNavigationBar.defaultNavBarTintColor = .white
-EFNavigationBar.defaultNavBarTitleColor = .white
-EFNavigationBar.defaultStatusBarStyle = .lightContent
-EFNavigationBar.defaultTransition = .linear
+EFNavigationBar.defaultNavBarBackgroundColor = UIColor.white
+EFNavigationBar.defaultNavBarTitleColor = UIColor.black
+EFNavigationBar.defaultNavBarTitleSize = 18
+EFNavigationBar.defaultStatusBarStyle = UIStatusBarStyle.default
 ```
 
 ## Other

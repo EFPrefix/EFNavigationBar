@@ -2,6 +2,13 @@
 
 -----
 
+## [5.1.0](https://github.com/EFPrefix/EFNavigationBar/releases/tag/5.1.0) (2019-06-23)
+
+- Combine `EFCustomNavigationBar` to `EFNavigationBar`;
+- Fix global settings.
+
+---
+
 ## [5.0.2](https://github.com/EFPrefix/EFNavigationBar/releases/tag/5.0.2) (2019-04-23)
 
 - Differentiating devices by `DeviceKit`.

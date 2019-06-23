@@ -95,17 +95,13 @@ navBarShadowImageHidden = true
 navBarTransition = .linear
 
 // 设置导航栏默认的背景颜色
-EFNavigationBar.defaultNavBarBarTintColor = UIColor.init(red: 0 / 255.0, green: 175 / 255.0, blue: 240 / 255.0, alpha: 1)
-// 设置导航栏所有按钮的默认颜色
-EFNavigationBar.defaultNavBarTintColor = .white
+EFNavigationBar.defaultNavBarBackgroundColor = UIColor.white
 // 设置导航栏标题默认颜色
-EFNavigationBar.defaultNavBarTitleColor = .white
+EFNavigationBar.defaultNavBarTitleColor = UIColor.black
+// 设置导航栏标题默认字号
+EFNavigationBar.defaultNavBarTitleSize = 18
 // 统一设置状态栏样式
-EFNavigationBar.defaultStatusBarStyle = .lightContent
-// 如果需要设置导航栏底部分割线隐藏，可以在这里统一设置
-EFNavigationBar.defaultShadowImageHidden = true
-// 设置全局导航栏转场过渡
-EFNavigationBar.defaultTransition = .linear
+EFNavigationBar.defaultStatusBarStyle = UIStatusBarStyle.default
 ```
 
 ## 其它
