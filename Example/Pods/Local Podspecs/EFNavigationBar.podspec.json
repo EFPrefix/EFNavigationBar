@@ -1,6 +1,6 @@
 {
   "name": "EFNavigationBar",
-  "version": "5.0.2",
+  "version": "5.1.0",
   "summary": "An ordinary custom navigation bar.",
   "description": "EFNavigationBar - An ordinary custom navigation bar, in Swift.",
   "homepage": "https://github.com/EFPrefix/EFNavigationBar",
@@ -14,7 +14,7 @@
   },
   "source": {
     "git": "https://github.com/EFPrefix/EFNavigationBar.git",
-    "tag": "5.0.2"
+    "tag": "5.1.0"
   },
   "social_media_url": "https://twitter.com/EyreFree777",
   "swift_version": "5.0",

@@ -26,21 +26,12 @@
 
 import UIKit
 
-let EFDefaultTitleSize: CGFloat = 18
-let EFDefaultTitleColor = UIColor.black
-let EFDefaultBackgroundColor = UIColor.white
-let EFScreenWidth = UIScreen.main.bounds.size.width
-
 public class EFNavigationBar: UIView {
 
-    public static var defaultNavBarBarTintColor: UIColor = UIColor.white
-    public static var defaultNavBarBackgroundImage: UIImage? = nil
-    public static var defaultNavBarTintColor: UIColor = UIColor(red: 0, green: 0.478431, blue: 1, alpha: 1.0)
+    public static var defaultNavBarBackgroundColor: UIColor = UIColor.white
     public static var defaultNavBarTitleColor: UIColor = UIColor.black
+    public static var defaultNavBarTitleSize: CGFloat = 18
     public static var defaultStatusBarStyle: UIStatusBarStyle = UIStatusBarStyle.default
-    public static var defaultShadowImageHidden: Bool = false
-    public static var defaultTransition: EFTransition = EFTransitionMethod.linear
-    public static var defaultBackgroundAlpha: CGFloat = 1.0
 
     public static var defaultNavBarBottom: CGFloat = UIDevice.isiPhoneXSeries ? 88 : 64
     public static var defaultTabBarHeight: CGFloat = UIDevice.isiPhoneXSeries ? 83 : 49
@@ -81,8 +72,8 @@ public class EFNavigationBar: UIView {
     //  UI variable
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.textColor = EFDefaultTitleColor
-        label.font = UIFont.systemFont(ofSize: EFDefaultTitleSize)
+        label.textColor = EFNavigationBar.defaultNavBarTitleColor
+        label.font = UIFont.systemFont(ofSize: EFNavigationBar.defaultNavBarTitleSize)
         label.textAlignment = .center
         label.isHidden = true
         return label
@@ -126,7 +117,7 @@ public class EFNavigationBar: UIView {
 
     // init
     public class func CustomNavigationBar() -> EFNavigationBar {
-        let frame = CGRect(x: 0, y: 0, width: EFScreenWidth, height: CGFloat(navBarBottom))
+        let frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: CGFloat(navBarBottom))
         return EFNavigationBar(frame: frame)
     }
     public override init(frame: CGRect) {
@@ -147,7 +138,7 @@ public class EFNavigationBar: UIView {
         addSubview(bottomLine)
         updateFrame()
         backgroundColor = UIColor.clear
-        backgroundView.backgroundColor = EFDefaultBackgroundColor
+        backgroundView.backgroundColor = EFNavigationBar.defaultNavBarBackgroundColor
     }
     public func updateFrame() {
         let top: CGFloat = UIDevice.isiPhoneXSeries ? 44 : 20
@@ -160,9 +151,9 @@ public class EFNavigationBar: UIView {
         backgroundView.frame = self.bounds
         backgroundImageView.frame = self.bounds
         leftButton.frame = CGRect(x: margin, y: top, width: buttonWidth, height: buttonHeight)
-        rightButton.frame = CGRect(x: EFScreenWidth - buttonWidth - margin, y: top, width: buttonWidth, height: buttonHeight)
-        titleLabel.frame = CGRect(x: (EFScreenWidth - titleLabelWidth) / 2.0, y: top, width: titleLabelWidth, height: titleLabelHeight)
-        bottomLine.frame = CGRect(x: 0, y: bounds.height - 0.5, width: EFScreenWidth, height: 0.5)
+        rightButton.frame = CGRect(x: UIScreen.main.bounds.size.width - buttonWidth - margin, y: top, width: buttonWidth, height: buttonHeight)
+        titleLabel.frame = CGRect(x: (UIScreen.main.bounds.size.width - titleLabelWidth) / 2.0, y: top, width: titleLabelWidth, height: titleLabelHeight)
+        bottomLine.frame = CGRect(x: 0, y: bounds.height - 0.5, width: UIScreen.main.bounds.size.width, height: 0.5)
     }
 }
 
