@@ -10,7 +10,7 @@ import UIKit
 import EFNavigationBar
 
 class BaseViewController: UIViewController {
-    lazy var navBar = EFCustomNavigationBar.CustomNavigationBar()
+    lazy var navBar = EFNavigationBar.CustomNavigationBar()
     
     override func viewDidLoad() {
         super.viewDidLoad()
