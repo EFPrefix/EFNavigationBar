@@ -34,7 +34,11 @@ extension UIDevice {
             Device.iPhoneX,
             Device.iPhoneXR,
             Device.iPhoneXS,
-            Device.iPhoneXSMax
+            Device.iPhoneXSMax,
+            Device.simulator(.iPhoneX),
+            Device.simulator(.iPhoneXR),
+            Device.simulator(.iPhoneXS),
+            Device.simulator(.iPhoneXSMax)
         ]
         guard let _ = iPhoneXSeries.firstIndex(of: Device.current) else { return false }
         return true

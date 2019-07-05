@@ -1,6 +1,0 @@
-framework module EFNavigationBar {
-  umbrella header "EFNavigationBar-umbrella.h"
-
-  export *
-  module * { export * }
-}

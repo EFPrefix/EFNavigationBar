@@ -2,6 +2,12 @@
 
 -----
 
+## [5.1.1](https://github.com/EFPrefix/EFNavigationBar/releases/tag/5.1.1) (2019-07-05)
+
+- Fix `isiPhoneXSeries`.
+
+---
+
 ## [5.1.0](https://github.com/EFPrefix/EFNavigationBar/releases/tag/5.1.0) (2019-06-23)
 
 - Combine `EFCustomNavigationBar` to `EFNavigationBar`;

@@ -1,6 +1,6 @@
 PODS:
   - DeviceKit (2.0.0)
-  - EFNavigationBar (5.1.0):
+  - EFNavigationBar (5.1.1):
     - DeviceKit (~> 2.0.0)
 
 DEPENDENCIES:
@@ -16,8 +16,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   DeviceKit: 72d36709552d4b3582abd76a53949148acad9811
-  EFNavigationBar: 6c505d00bc215c0e4e06f559ce15597888f23ccb
+  EFNavigationBar: 5f8845a3be575eb6cfa8bc0a0e63b60aa6f5bf17
 
 PODFILE CHECKSUM: f52cce4aac45a9dffbb471714ab719042b954a3a
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.7.2
