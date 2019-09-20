@@ -1,7 +1,7 @@
 PODS:
-  - DeviceKit (2.0.0)
-  - EFNavigationBar (5.1.1):
-    - DeviceKit (~> 2.0.0)
+  - DeviceKit (2.1.0)
+  - EFNavigationBar (5.1.2):
+    - DeviceKit (>= 2.1.0)
 
 DEPENDENCIES:
   - EFNavigationBar (from `../`)
@@ -15,9 +15,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  DeviceKit: 72d36709552d4b3582abd76a53949148acad9811
-  EFNavigationBar: 5f8845a3be575eb6cfa8bc0a0e63b60aa6f5bf17
+  DeviceKit: 2f6c28410d5a5fe2977be7f8cb9b313d28bdae69
+  EFNavigationBar: 449b89333e0ceefdff059f1f22c2b9ae1d209469
 
 PODFILE CHECKSUM: f52cce4aac45a9dffbb471714ab719042b954a3a
 
-COCOAPODS: 1.7.2
+COCOAPODS: 1.7.5

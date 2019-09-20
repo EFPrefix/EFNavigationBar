@@ -36,8 +36,8 @@ public class EFNavigationBar: UIView {
     public static var defaultNavBarBottom: CGFloat = UIDevice.isiPhoneXSeries ? 88 : 64
     public static var defaultTabBarHeight: CGFloat = UIDevice.isiPhoneXSeries ? 83 : 49
 
-    public var onClickLeftButton:(()->())?
-    public var onClickRightButton:(()->())?
+    public var onClickLeftButton: (()->())?
+    public var onClickRightButton: (()->())?
     public var title: String? {
         willSet {
             titleLabel.isHidden = false
@@ -69,7 +69,7 @@ public class EFNavigationBar: UIView {
         }
     }
 
-    //  UI variable
+    // UI variable
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = EFNavigationBar.defaultNavBarTitleColor

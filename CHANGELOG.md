@@ -2,6 +2,12 @@
 
 -----
 
+## [5.1.2](https://github.com/EFPrefix/EFNavigationBar/releases/tag/5.1.2) (2019-09-20)
+
+- Update `DeviceKit`.
+
+---
+
 ## [5.1.1](https://github.com/EFPrefix/EFNavigationBar/releases/tag/5.1.1) (2019-07-05)
 
 - Fix `isiPhoneXSeries`.
