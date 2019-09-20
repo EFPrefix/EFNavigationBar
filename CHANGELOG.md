@@ -2,6 +2,12 @@
 
 -----
 
+## [5.1.3](https://github.com/EFPrefix/EFNavigationBar/releases/tag/5.1.3) (2019-09-20)
+
+- Add dependency on `EFFoundation/Device`.
+
+---
+
 ## [5.1.2](https://github.com/EFPrefix/EFNavigationBar/releases/tag/5.1.2) (2019-09-20)
 
 - Update `DeviceKit`.

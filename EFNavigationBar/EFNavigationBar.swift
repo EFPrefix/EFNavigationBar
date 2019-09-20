@@ -25,6 +25,7 @@
 //  THE SOFTWARE.
 
 import UIKit
+import EFFoundation
 
 public class EFNavigationBar: UIView {
 

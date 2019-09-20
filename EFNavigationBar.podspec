@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'EFNavigationBar'
-    s.version          = '5.1.2'
+    s.version          = '5.1.3'
     s.summary          = 'An ordinary custom navigation bar.'
     
     s.description      = <<-DESC
@@ -18,6 +18,6 @@ Pod::Spec.new do |s|
     s.ios.deployment_target = '8.0'
     
     s.requires_arc = true
-    s.source_files = 'EFNavigationBar/Classes/**/*'
-    s.dependency 'DeviceKit', '>= 2.1.0'
+    s.source_files = 'EFNavigationBar/**/*'
+    s.dependency 'EFFoundation/Device', '>= 0.8.1'
 end
