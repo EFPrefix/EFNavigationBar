@@ -3,7 +3,7 @@ if ! command -v pod > /dev/null; then
 	printf 'See https://github.com/CocoaPods/CocoaPods for install instructions.\n'
 	exit 1
 fi
-cd Examples;
+cd Example;
 pod repo update;
 pod install;
 cd ..;

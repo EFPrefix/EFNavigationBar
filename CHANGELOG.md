@@ -2,6 +2,12 @@
 
 -----
 
+## [5.1.4](https://github.com/EFPrefix/EFNavigationBar/releases/tag/5.1.4) (2019-09-28)
+
+- Add support for the new September 2019 devices.
+
+---
+
 ## [5.1.3](https://github.com/EFPrefix/EFNavigationBar/releases/tag/5.1.3) (2019-09-20)
 
 - Add dependency on `EFFoundation/Device`.
