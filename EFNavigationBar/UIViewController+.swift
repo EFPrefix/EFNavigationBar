@@ -67,7 +67,7 @@ public extension UIViewController {
 }
 
 public extension UIViewController {
-    struct AssociatedKeys {
+    private struct AssociatedKeys {
         static var statusBarStyle: String = "statusBarStyle"
     }
     
