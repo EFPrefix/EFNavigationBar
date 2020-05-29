@@ -26,46 +26,6 @@
 
 import UIKit
 
-// MARK: - Router
-public extension UIViewController {
-    
-    // https://www.jianshu.com/p/1cab96bcbde9
-    func gotoLastViewController(animated: Bool, completion: (() -> Void)? = nil) {
-        if let navigationController = self.navigationController {
-            if navigationController.viewControllers.count == 1 {
-                self.dismiss(animated: animated, completion: completion)
-            } else {
-                CATransaction.begin()
-                CATransaction.setCompletionBlock(completion)
-                navigationController.popViewController(animated: animated)
-                CATransaction.commit()
-            }
-        } else if nil != self.presentingViewController {
-            self.dismiss(animated: animated, completion: completion)
-        }
-    }
-    
-    class func currentViewController() -> UIViewController {
-        if let rootVC = UIApplication.shared.delegate?.window??.rootViewController {
-            return self.currentViewController(from: rootVC)
-        } else {
-            return UIViewController()
-        }
-    }
-    
-    class func currentViewController(from viewController: UIViewController) -> UIViewController {
-        if let navigationController = viewController as? UINavigationController, let subViewController = navigationController.viewControllers.last {
-            return currentViewController(from: subViewController)
-        } else if let tabBarController = viewController as? UITabBarController, let subViewController = tabBarController.selectedViewController {
-            return currentViewController(from: subViewController)
-        } else if let presentedViewController = viewController.presentedViewController {
-            return currentViewController(from: presentedViewController)
-        } else {
-            return viewController
-        }
-    }
-}
-
 public extension UIViewController {
     private struct AssociatedKeys {
         static var statusBarStyle: String = "statusBarStyle"

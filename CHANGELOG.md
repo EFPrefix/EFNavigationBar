@@ -2,6 +2,12 @@
 
 -----
 
+## [5.1.8](https://github.com/EFPrefix/EFNavigationBar/releases/tag/5.1.8) (2020-05-31)
+
+- Update dependency.
+
+---
+
 ## [5.1.7](https://github.com/EFPrefix/EFNavigationBar/releases/tag/5.1.7) (2019-12-15)
 
 - Fix.

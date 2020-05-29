@@ -218,8 +218,7 @@ public extension EFNavigationBar {
         if let onClickLeft = onClickLeftButton {
             onClickLeft()
         } else {
-            let currentVC = UIViewController.currentViewController()
-            currentVC.gotoLastViewController(animated: true)
+            UIViewController.topViewController.goBack(animated: true)
         }
     }
 

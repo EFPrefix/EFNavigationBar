@@ -1,11 +1,11 @@
 PODS:
-  - DeviceKit (2.3.0)
-  - EFFoundation/Core (1.3.0)
-  - EFFoundation/Device (1.3.0):
-    - DeviceKit (~> 2.3.0)
+  - DeviceKit (3.2.0)
+  - EFFoundation/Core (1.4.4)
+  - EFFoundation/Device (1.4.4):
+    - DeviceKit (>= 3.2.0)
     - EFFoundation/Core
-  - EFNavigationBar (5.1.6):
-    - EFFoundation/Device (~> 1.3.0)
+  - EFNavigationBar (5.1.8):
+    - EFFoundation/Device (>= 1.4.4)
 
 DEPENDENCIES:
   - EFNavigationBar (from `../`)
@@ -20,10 +20,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  DeviceKit: da103891aa928d89f64ea8dd8aca738c5f3d8ac0
-  EFFoundation: 14f55ea9236046b9ae45e0e090198ec08ff9794d
-  EFNavigationBar: 5077b58c3ed757b7379711782fc72f225e08eb7a
+  DeviceKit: d081659419cce07c0b5239dbc9fb39ed7413c7fe
+  EFFoundation: c23743ddcdb5d0bb9e23a919facd3dd623f1ba85
+  EFNavigationBar: cf0c001f97572a7b85788e3f509ed4dedc7e979b
 
-PODFILE CHECKSUM: f52cce4aac45a9dffbb471714ab719042b954a3a
+PODFILE CHECKSUM: 1d51cde2471e7e240d47bb19c2c1dd2ac2b0e4be
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.3
