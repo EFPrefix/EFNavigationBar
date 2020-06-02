@@ -28,31 +28,15 @@ import UIKit
 import EFFoundation
 
 public class EFNavigationBar: UIView {
-
-    public static var defaultNavBarBackgroundColor: UIColor = UIColor.white
-    public static var defaultNavBarTitleColor: UIColor = UIColor.black
-    public static var defaultNavBarTitleSize: CGFloat = 18
-    public static var defaultStatusBarStyle: UIStatusBarStyle = UIStatusBarStyle.default
-
-    public static var defaultNavBarBottom: CGFloat = UIDevice.isiPhoneXSeries ? 88 : 64
-    public static var defaultTabBarHeight: CGFloat = UIDevice.isiPhoneXSeries ? 83 : 49
-
-    public var onClickLeftButton: (()->())?
-    public var onClickRightButton: (()->())?
+    
+    public static var defaultStyle: EFNavigationBarConfig = EFNavigationBarConfig()
+    
+    public var onLeftButtonClick: (()->())?
+    public var onRightButtonClick: (()->())?
+    
     public var title: String? {
         willSet {
-            titleLabel.isHidden = false
             titleLabel.text = newValue
-        }
-    }
-    public var titleLabelColor: UIColor? {
-        willSet {
-            titleLabel.textColor = newValue
-        }
-    }
-    public var titleLabelFont: UIFont? {
-        willSet {
-            titleLabel.font = newValue
         }
     }
     public var barBackgroundColor: UIColor? {
@@ -69,56 +53,58 @@ public class EFNavigationBar: UIView {
             backgroundImageView.image = newValue
         }
     }
-
+    
     // UI variable
-    lazy var titleLabel: UILabel = {
+    public lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.textColor = EFNavigationBar.defaultNavBarTitleColor
-        label.font = UIFont.systemFont(ofSize: EFNavigationBar.defaultNavBarTitleSize)
+        label.text = EFNavigationBar.defaultStyle.title
+        label.textColor = EFNavigationBar.defaultStyle.titleColor
+        label.font = EFNavigationBar.defaultStyle.titleFont
         label.textAlignment = .center
-        label.isHidden = true
         return label
     }()
-
+    
     public lazy var leftButton: UIButton = {
         let button = UIButton()
+        button.setTitleColor(EFNavigationBar.defaultStyle.buttonTitleColor)
+        button.titleLabel?.font = EFNavigationBar.defaultStyle.buttonTitleFont
         button.imageView?.contentMode = .center
         button.isHidden = true
         button.addTarget(self, action: #selector(clickLeft), for: .touchUpInside)
         return button
     }()
-
+    
     public lazy var rightButton: UIButton = {
         let button = UIButton()
+        button.setTitleColor(EFNavigationBar.defaultStyle.buttonTitleColor)
+        button.titleLabel?.font = EFNavigationBar.defaultStyle.buttonTitleFont
         button.imageView?.contentMode = .center
         button.isHidden = true
         button.addTarget(self, action: #selector(clickRight), for: .touchUpInside)
         return button
     }()
-
-    lazy var bottomLine: UIView = {
+    
+    public lazy var bottomLine: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(red: 218.0 / 255.0, green: 218.0 / 255.0, blue: 218.0 / 255.0, alpha: 1.0)
+        view.backgroundColor = EFNavigationBar.defaultStyle.bottomLineColor
         return view
     }()
-
-    lazy var backgroundView: UIView = {
+    
+    public lazy var backgroundView: UIView = {
         let view = UIView()
+        view.backgroundColor = EFNavigationBar.defaultStyle.backgroundColor
         return view
     }()
-
-    lazy var backgroundImageView: UIImageView = {
-        let imgView = UIImageView()
-        imgView.isHidden = true
-        return imgView
+    
+    public lazy var backgroundImageView: UIImageView = {
+        let view = UIImageView()
+        view.isHidden = true
+        return view
     }()
-
-    //  other variable
-    static var navBarBottom: CGFloat = EFNavigationBar.defaultNavBarBottom
-
+    
     // init
     public class func CustomNavigationBar() -> EFNavigationBar {
-        let frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: CGFloat(navBarBottom))
+        let frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: EFNavigationBar.defaultStyle.height)
         return EFNavigationBar(frame: frame)
     }
     public override init(frame: CGRect) {
@@ -129,7 +115,7 @@ public class EFNavigationBar: UIView {
         super.init(coder: aDecoder)
         setupView()
     }
-
+    
     public func setupView() {
         addSubview(backgroundView)
         addSubview(backgroundImageView)
@@ -139,16 +125,15 @@ public class EFNavigationBar: UIView {
         addSubview(bottomLine)
         updateFrame()
         backgroundColor = UIColor.clear
-        backgroundView.backgroundColor = EFNavigationBar.defaultNavBarBackgroundColor
     }
     public func updateFrame() {
-        let top: CGFloat = UIDevice.isiPhoneXSeries ? 44 : 20
-        let margin: CGFloat = 0
-        let buttonHeight: CGFloat = 44
-        let buttonWidth: CGFloat = 44
-        let titleLabelHeight: CGFloat = 44
-        let titleLabelWidth: CGFloat = 180
-
+        let top: CGFloat = CGFloat.statusBarHeight
+        let margin: CGFloat = EFNavigationBar.defaultStyle.buttonMargin
+        let buttonHeight: CGFloat = EFNavigationBar.defaultStyle.buttonHeight
+        let buttonWidth: CGFloat = EFNavigationBar.defaultStyle.buttonWidth
+        let titleLabelHeight: CGFloat = EFNavigationBar.defaultStyle.titleHeight
+        let titleLabelWidth: CGFloat = EFNavigationBar.defaultStyle.titleWidth
+        
         backgroundView.frame = self.bounds
         backgroundImageView.frame = self.bounds
         leftButton.frame = CGRect(x: margin, y: top, width: buttonWidth, height: buttonHeight)
@@ -167,12 +152,14 @@ public extension EFNavigationBar {
         backgroundImageView.alpha = alpha
         bottomLine.alpha = alpha
     }
+    func setTitleColor(color: UIColor) {
+        titleLabel.textColor = color
+    }
     func setTintColor(color: UIColor) {
         leftButton.setTitleColor(color, for: .normal)
         rightButton.setTitleColor(color, for: .normal)
-        titleLabel.textColor = color
     }
-
+    
     // 左右按钮共有方法
     func setLeftButton(normal: UIImage, highlighted: UIImage) {
         setLeftButton(normal: normal, highlighted: highlighted, title: nil, titleColor: nil)
@@ -183,7 +170,7 @@ public extension EFNavigationBar {
     func setLeftButton(title: String, titleColor: UIColor) {
         setLeftButton(normal: nil, highlighted: nil, title: title, titleColor: titleColor)
     }
-
+    
     func setRightButton(normal: UIImage, highlighted: UIImage) {
         setRightButton(normal: normal, highlighted: highlighted, title: nil, titleColor: nil)
     }
@@ -193,7 +180,7 @@ public extension EFNavigationBar {
     func setRightButton(title: String, titleColor: UIColor) {
         setRightButton(normal: nil, highlighted: nil, title: title, titleColor: titleColor)
     }
-
+    
     // 左右按钮私有方法
     private func setLeftButton(normal: UIImage?, highlighted: UIImage?, title: String?, titleColor: UIColor?) {
         setButton(isLeft: true, normal: normal, highlighted: highlighted, title: title, titleColor: titleColor)
@@ -213,17 +200,17 @@ public extension EFNavigationBar {
 
 // MARK: - 导航栏左右按钮事件
 public extension EFNavigationBar {
-
+    
     @objc func clickLeft() {
-        if let onClickLeft = onClickLeftButton {
+        if let onClickLeft = onLeftButtonClick {
             onClickLeft()
         } else {
             UIViewController.topViewController.goBack(animated: true)
         }
     }
-
+    
     @objc func clickRight() {
-        if let onClickRight = onClickRightButton {
+        if let onClickRight = onRightButtonClick {
             onClickRight()
         }
     }

@@ -29,7 +29,7 @@ class BaseViewController: UIViewController {
         // navBar.backgroundColor = MainNavBarColor
         
         // 设置自定义导航栏标题颜色
-        navBar.titleLabelColor = .white
+        navBar.setTitleColor(color: .blue)
 
         // 设置自定义导航栏左右按钮字体颜色
         navBar.setTintColor(color: .white)

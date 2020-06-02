@@ -95,13 +95,13 @@ navBarShadowImageHidden = true
 navBarTransition = .linear
 
 // 设置导航栏默认的背景颜色
-EFNavigationBar.defaultNavBarBackgroundColor = UIColor.white
+EFNavigationBar.defaultStyle.backgroundColor = UIColor.white
 // 设置导航栏标题默认颜色
-EFNavigationBar.defaultNavBarTitleColor = UIColor.black
+EFNavigationBar.defaultStyle.titleColor = UIColor.black
 // 设置导航栏标题默认字号
-EFNavigationBar.defaultNavBarTitleSize = 18
+EFNavigationBar.defaultStyle.titleSize = 18
 // 统一设置状态栏样式
-EFNavigationBar.defaultStatusBarStyle = UIStatusBarStyle.default
+EFNavigationBar.defaultStyle.statusBarStyle = UIStatusBarStyle.default
 ```
 
 ## 其它

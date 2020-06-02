@@ -12,9 +12,7 @@ import EFNavigationBar
 let MainNavBarColor = UIColor.init(red: 0 / 255.0, green: 175 / 255.0, blue: 240 / 255.0, alpha: 1)
 let kScreenWidth = UIScreen.main.bounds.width
 let kScreenHeight = UIScreen.main.bounds.height
-let kTabBarHeight = EFNavigationBar.defaultTabBarHeight
-let kNavBarHeight = 44
-let kNavBarBottom = EFNavigationBar.defaultNavBarBottom
+let kNavBarHeight = EFNavigationBar.defaultStyle.height
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -33,9 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func setNavBarAppearence() {
-        // 设置导航栏标题默认颜色
-        EFNavigationBar.defaultNavBarTitleColor = .white
-        // 统一设置状态栏样式
-        EFNavigationBar.defaultStatusBarStyle = .lightContent
+        EFNavigationBar.defaultStyle.backgroundColor = UIColor.white
+        EFNavigationBar.defaultStyle.titleColor = .orange
+        EFNavigationBar.defaultStyle.statusBarStyle = .lightContent
     }
 }
