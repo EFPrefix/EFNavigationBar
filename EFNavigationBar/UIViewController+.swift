@@ -26,16 +26,16 @@
 
 import UIKit
 
+fileprivate struct AssociatedKeys {
+    static var statusBarStyle: String = "statusBarStyle"
+}
+
 public extension UIViewController {
-    private struct AssociatedKeys {
-        static var statusBarStyle: String = "statusBarStyle"
-    }
     
-    // statusBarStyle
     var statusBarStyle: UIStatusBarStyle {
         get {
             guard let style = objc_getAssociatedObject(self, &AssociatedKeys.statusBarStyle) as? UIStatusBarStyle else {
-                return EFNavigationBar.defaultStatusBarStyle
+                return EFNavigationBar.defaultStyle.statusBarStyle
             }
             return style
         }

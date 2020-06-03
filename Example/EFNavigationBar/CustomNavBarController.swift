@@ -9,7 +9,7 @@
 import UIKit
 
 private let IMAGE_HEIGHT: CGFloat = 260
-private let NAVBAR_COLORCHANGE_POINT: CGFloat = IMAGE_HEIGHT - CGFloat(kNavBarBottom * 2)
+private let NAVBAR_COLORCHANGE_POINT: CGFloat = IMAGE_HEIGHT - CGFloat(kNavBarHeight * 2)
 
 class CustomNavBarController: BaseViewController {
     lazy var tableView: UITableView = {
@@ -54,7 +54,7 @@ class CustomNavBarController: BaseViewController {
         navBar.setBackgroundAlpha(alpha: 0)
         
         // 设置标题文字颜色
-        navBar.titleLabelColor = UIColor.white
+        navBar.titleLabel.textColor = UIColor.white
     }
 }
 
@@ -63,15 +63,15 @@ extension CustomNavBarController {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
         if (offsetY > NAVBAR_COLORCHANGE_POINT) {
-            let alpha = (offsetY - NAVBAR_COLORCHANGE_POINT) / CGFloat(kNavBarBottom)
+            let alpha = (offsetY - NAVBAR_COLORCHANGE_POINT) / CGFloat(kNavBarHeight)
             navBar.setBackgroundAlpha(alpha: alpha)
             navBar.setTintColor(color: UIColor.black.withAlphaComponent(alpha))
-            navBar.titleLabelColor = UIColor.black.withAlphaComponent(alpha)
+            navBar.titleLabel.textColor = UIColor.black.withAlphaComponent(alpha)
             //statusBarStyle = .default
         } else {
             navBar.setBackgroundAlpha(alpha: 0)
             navBar.setTintColor(color: .white)
-            navBar.titleLabelColor = .white
+            navBar.titleLabel.textColor = .white
             //statusBarStyle = .lightContent
         }
     }

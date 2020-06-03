@@ -9,7 +9,7 @@
 import UIKit
 
 private let IMAGE_HEIGHT: CGFloat = 250
-private let NAVBAR_COLORCHANGE_POINT: CGFloat = IMAGE_HEIGHT - CGFloat(kNavBarBottom * 2)
+private let NAVBAR_COLORCHANGE_POINT: CGFloat = IMAGE_HEIGHT - CGFloat(kNavBarHeight * 2)
 
 class MillcolorGradController: BaseViewController {    
     lazy var tableView: UITableView = {
@@ -59,7 +59,7 @@ extension MillcolorGradController {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
         if (offsetY > NAVBAR_COLORCHANGE_POINT) {
-            let alpha = (offsetY - NAVBAR_COLORCHANGE_POINT) / CGFloat(kNavBarBottom)
+            let alpha = (offsetY - NAVBAR_COLORCHANGE_POINT) / CGFloat(kNavBarHeight)
             navBar.setBackgroundAlpha(alpha: alpha)
         } else {
             navBar.setBackgroundAlpha(alpha: 0)

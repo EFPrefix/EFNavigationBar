@@ -2,6 +2,12 @@
 
 -----
 
+## [5.2.0](https://github.com/EFPrefix/EFNavigationBar/releases/tag/5.2.0) (2020-06-03)
+
+- Add EFNavigationBarConfig.
+
+---
+
 ## [5.1.8](https://github.com/EFPrefix/EFNavigationBar/releases/tag/5.1.8) (2020-05-31)
 
 - Update dependency.

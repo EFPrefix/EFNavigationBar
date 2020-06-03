@@ -9,7 +9,7 @@
 import UIKit
 
 class CustomListController: BaseViewController {
-    lazy var tableView: UITableView = UITableView(frame: CGRect.init(x: 0, y: CGFloat(kNavBarBottom), width: kScreenWidth, height: self.view.bounds.height), style: .plain)
+    lazy var tableView: UITableView = UITableView(frame: CGRect.init(x: 0, y: CGFloat(kNavBarHeight), width: kScreenWidth, height: self.view.bounds.height), style: .plain)
     
     override func viewDidLoad() {
         super.viewDidLoad()
