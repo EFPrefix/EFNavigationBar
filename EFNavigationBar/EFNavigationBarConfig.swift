@@ -34,15 +34,15 @@ public struct EFNavigationBarConfig {
     public var height: CGFloat = CGFloat.statusBarAndNavigationBarHeight
     public var backgroundColor: UIColor = UIColor.white
     
-    public var bottomLineColor: UIColor = UIColor(red: 218.0 / 255.0, green: 218.0 / 255.0, blue: 218.0 / 255.0, alpha: 1.0)
+    public var bottomLineColor: UIColor = UIColor(red: 32.0 / 255.0, green: 36.0 / 255.0, blue: 38.0 / 255.0, alpha: 0.06)
     
     public var titleColor: UIColor = UIColor.black
-    public var titleSize: CGFloat = 18 {
+    public var titleSize: CGFloat = 16 {
         didSet {
             titleFont = UIFont.systemFont(ofSize: titleSize)
         }
     }
-    public var titleFont: UIFont = UIFont.systemFont(ofSize: 18)
+    public var titleFont: UIFont = UIFont.pingFangSCMedium(ofSize: 16)
     let titleHeight: CGFloat = CGFloat.navigationBarHeight
     let titleWidth: CGFloat = CGFloat.screenWidth - 2 * CGFloat.navigationBarHeight
     

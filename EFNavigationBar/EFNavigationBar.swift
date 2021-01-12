@@ -127,6 +127,39 @@ public class EFNavigationBar: UIView {
         backgroundColor = UIColor.clear
     }
     public func updateFrame() {
+        
+        backgroundView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate(
+            [backgroundView.topAnchor.constraint(equalTo: topAnchor),
+             backgroundView.bottomAnchor.constraint(equalTo: bottomAnchor),
+             backgroundView.leftAnchor.constraint(equalTo: leftAnchor),
+             backgroundView.rightAnchor.constraint(equalTo: rightAnchor)]
+        )
+
+        leftButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate(
+            [leftButton.leftAnchor.constraint(equalTo: leftAnchor, constant: 15),
+             leftButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12)]
+        )
+        leftButton.setContentHuggingPriority(UILayoutPriority.defaultHigh + 1, for: .horizontal)
+        
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate(
+            [titleLabel.leftAnchor.constraint(equalTo: leftButton.rightAnchor, constant: 0),
+             titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
+            ]
+        )
+        titleLabel.setContentCompressionResistancePriority(UILayoutPriority.defaultLow - 1, for: .horizontal)
+        
+        rightButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate(
+            [rightButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -15),
+             rightButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12),
+             rightButton.leftAnchor.constraint(equalTo: titleLabel.rightAnchor, constant: 0)]
+        )
+        rightButton.setContentHuggingPriority(.defaultHigh + 2, for: .horizontal)
+        return
+        
         let top: CGFloat = CGFloat.statusBarHeight
         let margin: CGFloat = EFNavigationBar.defaultStyle.buttonMargin
         let buttonHeight: CGFloat = EFNavigationBar.defaultStyle.buttonHeight
