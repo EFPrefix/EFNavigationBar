@@ -2,6 +2,12 @@
 
 -----
 
+## [5.2.2](https://github.com/EFPrefix/EFNavigationBar/releases/tag/5.2.2) (2021-01-12)
+
+- Change frame to layout constraint.
+
+---
+
 ## [5.2.1](https://github.com/EFPrefix/EFNavigationBar/releases/tag/5.2.1) (2020-09-04)
 
 - Update dependency.
