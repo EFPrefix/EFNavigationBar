@@ -128,6 +128,9 @@ public class EFNavigationBar: UIView {
     }
     public func updateFrame() {
         
+        let top: CGFloat = CGFloat.statusBarHeight
+        let margin: CGFloat = EFNavigationBar.defaultStyle.buttonMargin
+        
         backgroundView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate(
             [backgroundView.topAnchor.constraint(equalTo: topAnchor),
@@ -138,7 +141,7 @@ public class EFNavigationBar: UIView {
 
         leftButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate(
-            [leftButton.leftAnchor.constraint(equalTo: leftAnchor, constant: 15),
+            [leftButton.leftAnchor.constraint(equalTo: leftAnchor, constant: margin),
              leftButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12)]
         )
         leftButton.setContentHuggingPriority(UILayoutPriority.defaultHigh + 1, for: .horizontal)
@@ -153,26 +156,19 @@ public class EFNavigationBar: UIView {
         
         rightButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate(
-            [rightButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -15),
+            [rightButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -margin),
              rightButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12),
              rightButton.leftAnchor.constraint(equalTo: titleLabel.rightAnchor, constant: 0)]
         )
         rightButton.setContentHuggingPriority(.defaultHigh + 2, for: .horizontal)
-        return
         
-        let top: CGFloat = CGFloat.statusBarHeight
-        let margin: CGFloat = EFNavigationBar.defaultStyle.buttonMargin
-        let buttonHeight: CGFloat = EFNavigationBar.defaultStyle.buttonHeight
-        let buttonWidth: CGFloat = EFNavigationBar.defaultStyle.buttonWidth
-        let titleLabelHeight: CGFloat = EFNavigationBar.defaultStyle.titleHeight
-        let titleLabelWidth: CGFloat = EFNavigationBar.defaultStyle.titleWidth
+        NSLayoutConstraint.activate(
+            [bottomLine.rightAnchor.constraint(equalTo: rightAnchor, constant: 0),
+             bottomLine.leftAnchor.constraint(equalTo: leftAnchor, constant: 0),
+             bottomLine.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
+             bottomLine.heightAnchor.constraint(equalToConstant: 0.5)]
+        )
         
-        backgroundView.frame = self.bounds
-        backgroundImageView.frame = self.bounds
-        leftButton.frame = CGRect(x: margin, y: top, width: buttonWidth, height: buttonHeight)
-        rightButton.frame = CGRect(x: UIScreen.main.bounds.size.width - buttonWidth - margin, y: top, width: buttonWidth, height: buttonHeight)
-        titleLabel.frame = CGRect(x: (UIScreen.main.bounds.size.width - titleLabelWidth) / 2.0, y: top, width: titleLabelWidth, height: titleLabelHeight)
-        bottomLine.frame = CGRect(x: 0, y: bounds.height - 0.5, width: UIScreen.main.bounds.size.width, height: 0.5)
     }
 }
 
