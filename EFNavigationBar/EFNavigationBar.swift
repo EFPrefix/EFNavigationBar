@@ -130,6 +130,10 @@ public class EFNavigationBar: UIView {
         
         let top: CGFloat = CGFloat.statusBarHeight
         let margin: CGFloat = EFNavigationBar.defaultStyle.buttonMargin
+        let buttonHeight: CGFloat = EFNavigationBar.defaultStyle.buttonHeight
+        let buttonWidth: CGFloat = EFNavigationBar.defaultStyle.buttonWidth
+        let titleLabelHeight: CGFloat = EFNavigationBar.defaultStyle.titleHeight
+        let titleLabelWidth: CGFloat = EFNavigationBar.defaultStyle.titleWidth
         
         backgroundView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate(
@@ -142,14 +146,18 @@ public class EFNavigationBar: UIView {
         leftButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate(
             [leftButton.leftAnchor.constraint(equalTo: leftAnchor, constant: margin),
-             leftButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12)]
+             leftButton.widthAnchor.constraint(equalToConstant: buttonWidth),
+             leftButton.heightAnchor.constraint(equalToConstant: buttonHeight),
+             leftButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0)]
         )
         leftButton.setContentHuggingPriority(UILayoutPriority.defaultHigh + 1, for: .horizontal)
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate(
             [titleLabel.leftAnchor.constraint(equalTo: leftButton.rightAnchor, constant: 0),
-             titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
+             titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: top),
+             titleLabel.heightAnchor.constraint(equalToConstant: titleLabelHeight),
+             titleLabel.widthAnchor.constraint(equalToConstant: titleLabelWidth)
             ]
         )
         titleLabel.setContentCompressionResistancePriority(UILayoutPriority.defaultLow - 1, for: .horizontal)
@@ -157,18 +165,21 @@ public class EFNavigationBar: UIView {
         rightButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate(
             [rightButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -margin),
-             rightButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12),
+             rightButton.widthAnchor.constraint(equalToConstant: buttonWidth),
+             rightButton.heightAnchor.constraint(equalToConstant: buttonHeight),
+             rightButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
              rightButton.leftAnchor.constraint(equalTo: titleLabel.rightAnchor, constant: 0)]
         )
         rightButton.setContentHuggingPriority(.defaultHigh + 2, for: .horizontal)
         
+        bottomLine.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate(
             [bottomLine.rightAnchor.constraint(equalTo: rightAnchor, constant: 0),
              bottomLine.leftAnchor.constraint(equalTo: leftAnchor, constant: 0),
              bottomLine.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
              bottomLine.heightAnchor.constraint(equalToConstant: 0.5)]
         )
-        
+
     }
 }
 
