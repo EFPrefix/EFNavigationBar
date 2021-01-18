@@ -49,6 +49,8 @@ class ImageNavController: BaseViewController {
         
         // 设置状态栏style
         //statusBarStyle = .lightContent
+        navBar.setBottomLineHidden(hidden: false)
+
     }
     
     deinit {
