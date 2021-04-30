@@ -35,14 +35,25 @@ public class EFNavigationBar: UIView {
     
     public static var defaultStyle: EFNavigationBarConfig = EFNavigationBarConfig()
     
+    public var leftMargin: CGFloat = 0 {
+        didSet {
+            leftFixedSpace.width = leftMargin - 16
+        }
+    }
+    
+    public var rightMargin: CGFloat = 0 {
+        didSet {
+            rightFixedSpace.width = rightMargin - 16
+        }
+    }
+    
     public var onLeftButtonClick: (()->())?
     public var onRightButtonClick: (()->())?
     
     public var titleAlignment: NSTextAlignment = NSTextAlignment.center {
         didSet {
             if titleAlignment == .left {
-                var items = navigationItems.filter({$0.tag != leftFlexTagKey})
-                toolBar.items = items
+                toolBar.items = navigationItems.filter({$0.tag != leftFlexTagKey})
             }else if titleAlignment == .right {
                 toolBar.items = navigationItems.filter({$0.tag != rightFlexTagKey})
             }else {
@@ -154,13 +165,13 @@ public class EFNavigationBar: UIView {
             rightFixedSpace]
     }
     
-    var leftFixedSpace: UIBarButtonItem = {
+    private var leftFixedSpace: UIBarButtonItem = {
         var leftFixedSpace = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
         leftFixedSpace.width = -16
         return leftFixedSpace
     }()
     
-    var rightFixedSpace: UIBarButtonItem = {
+    private var rightFixedSpace: UIBarButtonItem = {
         var rightFixedSpace = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
         rightFixedSpace.width = -16
         return rightFixedSpace
@@ -184,6 +195,7 @@ public class EFNavigationBar: UIView {
         addSubview(toolBar)
         leftButton.frame.size = CGSize(width: 44, height: 44)
         rightButton.frame.size = CGSize(width: 44, height: 44)
+        rightButton.backgroundColor = UIColor.green
         toolBar.items = [
             leftFixedSpace,
             UIBarButtonItem(customView: leftButton),
