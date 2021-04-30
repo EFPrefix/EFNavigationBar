@@ -47,6 +47,18 @@ public class EFNavigationBar: UIView {
         }
     }
     
+    public var titleLeftMargin: CGFloat = 0 {
+        didSet {
+            titleLeftFixedSpace.width = titleLeftMargin
+        }
+    }
+    
+    public var titleRightMargin: CGFloat = 0 {
+        didSet {
+            titleLeftFixedSpace.width = titleRightMargin
+        }
+    }
+    
     public var onLeftButtonClick: (()->())?
     public var onRightButtonClick: (()->())?
     
@@ -165,6 +177,16 @@ public class EFNavigationBar: UIView {
             rightFixedSpace]
     }
     
+    private var titleLeftFixedSpace: UIBarButtonItem = {
+        var titleLeftFixedSpace = UIBarButtonItem()
+        return titleLeftFixedSpace
+    }()
+    
+    private var titleRightFixedSpace: UIBarButtonItem = {
+        var titleRightFixedSpace = UIBarButtonItem()
+        return titleRightFixedSpace
+    }()
+    
     private var leftFixedSpace: UIBarButtonItem = {
         var leftFixedSpace = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
         leftFixedSpace.width = -16
@@ -195,12 +217,13 @@ public class EFNavigationBar: UIView {
         addSubview(toolBar)
         leftButton.frame.size = CGSize(width: 44, height: 44)
         rightButton.frame.size = CGSize(width: 44, height: 44)
-        rightButton.backgroundColor = UIColor.green
         toolBar.items = [
             leftFixedSpace,
             UIBarButtonItem(customView: leftButton),
             leftFlexSpace,
+            titleLeftFixedSpace,
             UIBarButtonItem(customView: titleLabel),
+            titleRightFixedSpace,
             rightFlexSpace,
             UIBarButtonItem(customView: rightButton),
             rightFixedSpace]
