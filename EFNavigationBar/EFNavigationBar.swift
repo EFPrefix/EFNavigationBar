@@ -55,7 +55,7 @@ public class EFNavigationBar: UIView {
     
     public var titleRightMargin: CGFloat = 0 {
         didSet {
-            titleLeftFixedSpace.width = titleRightMargin
+            titleRightFixedSpace.width = titleRightMargin
         }
     }
     
