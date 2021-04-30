@@ -34,6 +34,19 @@ public class EFNavigationBar: UIView {
     public var onLeftButtonClick: (()->())?
     public var onRightButtonClick: (()->())?
     
+    public var titleAlignment: NSTextAlignment = NSTextAlignment.center {
+        didSet {
+            if titleAlignment == .left {
+                toolBar.items = navigationItems.filter({$0 != leftFlexSpace})
+            }else if titleAlignment == .right {
+                toolBar.items = navigationItems.filter({$0 != rightFlexSpace})
+            }else {
+                toolBar.items = navigationItems
+            }
+            
+        }
+    }
+    
     public var title: String? {
         willSet {
             titleLabel.text = newValue
@@ -53,6 +66,14 @@ public class EFNavigationBar: UIView {
             backgroundImageView.image = newValue
         }
     }
+    
+    public lazy var toolBar: UIToolbar = {
+        let toolBar = UIToolbar()
+        toolBar.backgroundColor = UIColor.clear
+        toolBar.setBackgroundImage(UIImage(), forToolbarPosition: .any, barMetrics: .default)
+        toolBar.setShadowImage(UIImage(), forToolbarPosition: .any)
+        return toolBar
+    }()
     
     // UI variable
     public lazy var titleLabel: UILabel = {
@@ -101,30 +122,76 @@ public class EFNavigationBar: UIView {
         view.isHidden = true
         return view
     }()
-    
+        
     // init
     public class func CustomNavigationBar() -> EFNavigationBar {
         let frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: EFNavigationBar.defaultStyle.height)
         return EFNavigationBar(frame: frame)
     }
+    
     public override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
     }
+    
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupView()
     }
     
+    var navigationItems: [UIBarButtonItem] {
+        return [
+            leftFixedSpace,
+            UIBarButtonItem(customView: leftButton),
+            leftFlexSpace,
+            UIBarButtonItem(customView: titleLabel),
+            rightFlexSpace,
+            UIBarButtonItem(customView: rightButton),
+            rightFixedSpace]
+    }
+    
+    var leftFixedSpace: UIBarButtonItem = {
+        var leftFixedSpace = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        leftFixedSpace.width = -16
+        return leftFixedSpace
+    }()
+    
+    var rightFixedSpace: UIBarButtonItem = {
+        var rightFixedSpace = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        rightFixedSpace.width = -16
+        return rightFixedSpace
+    }()
+    
+    var leftFlexSpace: UIBarButtonItem = {
+        let leftFlexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        return leftFlexSpace
+    }()
+    
+    var rightFlexSpace: UIBarButtonItem = {
+        let rightFlexSapce = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        return rightFlexSapce
+    }()
+    
     public func setupView() {
         addSubview(backgroundView)
         addSubview(backgroundImageView)
-        addSubview(leftButton)
-        addSubview(titleLabel)
-        addSubview(rightButton)
+        addSubview(toolBar)
+        leftButton.frame.size = CGSize(width: 44, height: 44)
+        rightButton.frame.size = CGSize(width: 44, height: 44)
+        toolBar.items = [
+            leftFixedSpace,
+            UIBarButtonItem(customView: leftButton),
+            leftFlexSpace,
+            UIBarButtonItem(customView: titleLabel),
+            rightFlexSpace,
+            UIBarButtonItem(customView: rightButton),
+            rightFixedSpace]
+
         addSubview(bottomLine)
         updateFrame()
         backgroundColor = UIColor.clear
+        
+        
     }
     public func updateFrame() {
         
@@ -142,35 +209,16 @@ public class EFNavigationBar: UIView {
              backgroundView.leftAnchor.constraint(equalTo: leftAnchor),
              backgroundView.rightAnchor.constraint(equalTo: rightAnchor)]
         )
-
-        leftButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate(
-            [leftButton.leftAnchor.constraint(equalTo: leftAnchor, constant: margin),
-             leftButton.widthAnchor.constraint(equalToConstant: buttonWidth),
-             leftButton.heightAnchor.constraint(equalToConstant: buttonHeight),
-             leftButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0)]
-        )
-        leftButton.setContentHuggingPriority(UILayoutPriority.defaultHigh + 1, for: .horizontal)
         
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        toolBar.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate(
-            [titleLabel.leftAnchor.constraint(equalTo: leftButton.rightAnchor, constant: 0),
-             titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: top),
-             titleLabel.heightAnchor.constraint(equalToConstant: titleLabelHeight),
-             titleLabel.widthAnchor.constraint(equalToConstant: titleLabelWidth)
-            ]
+            [
+//                toolBar.topAnchor.constraint(equalTo: topAnchor),
+             toolBar.bottomAnchor.constraint(equalTo: bottomAnchor),
+             toolBar.leftAnchor.constraint(equalTo: leftAnchor),
+             toolBar.rightAnchor.constraint(equalTo: rightAnchor),
+             toolBar.heightAnchor.constraint(equalToConstant: buttonHeight),]
         )
-        titleLabel.setContentCompressionResistancePriority(UILayoutPriority.defaultLow - 1, for: .horizontal)
-        
-        rightButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate(
-            [rightButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -margin),
-             rightButton.widthAnchor.constraint(equalToConstant: buttonWidth),
-             rightButton.heightAnchor.constraint(equalToConstant: buttonHeight),
-             rightButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
-             rightButton.leftAnchor.constraint(equalTo: titleLabel.rightAnchor, constant: 0)]
-        )
-        rightButton.setContentHuggingPriority(.defaultHigh + 2, for: .horizontal)
         
         bottomLine.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate(
