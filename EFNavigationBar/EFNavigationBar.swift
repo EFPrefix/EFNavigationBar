@@ -29,6 +29,10 @@ import EFFoundation
 
 public class EFNavigationBar: UIView {
     
+    let leftFlexTagKey: Int = 100010
+    
+    let rightFlexTagKey: Int = 100011
+    
     public static var defaultStyle: EFNavigationBarConfig = EFNavigationBarConfig()
     
     public var onLeftButtonClick: (()->())?
@@ -37,13 +41,13 @@ public class EFNavigationBar: UIView {
     public var titleAlignment: NSTextAlignment = NSTextAlignment.center {
         didSet {
             if titleAlignment == .left {
-                toolBar.items = navigationItems.filter({$0 != leftFlexSpace})
+                var items = navigationItems.filter({$0.tag != leftFlexTagKey})
+                toolBar.items = items
             }else if titleAlignment == .right {
-                toolBar.items = navigationItems.filter({$0 != rightFlexSpace})
+                toolBar.items = navigationItems.filter({$0.tag != rightFlexTagKey})
             }else {
                 toolBar.items = navigationItems
             }
-            
         }
     }
     
@@ -162,13 +166,15 @@ public class EFNavigationBar: UIView {
         return rightFixedSpace
     }()
     
-    var leftFlexSpace: UIBarButtonItem = {
+    lazy var leftFlexSpace: UIBarButtonItem = {
         let leftFlexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        leftFlexSpace.tag = leftFlexTagKey
         return leftFlexSpace
     }()
     
-    var rightFlexSpace: UIBarButtonItem = {
+    lazy var rightFlexSpace: UIBarButtonItem = {
         let rightFlexSapce = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        rightFlexSapce.tag = rightFlexTagKey
         return rightFlexSapce
     }()
     
@@ -283,6 +289,9 @@ public extension EFNavigationBar {
         button.setImage(highlighted, for: .highlighted)
         button.setTitle(title, for: .normal)
         button.setTitleColor(titleColor, for: .normal)
+        
+        let titleAlignment = titleAlignment
+        self.titleAlignment = titleAlignment
     }
 }
 
