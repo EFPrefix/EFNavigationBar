@@ -171,19 +171,21 @@ public class EFNavigationBar: UIView {
             leftFixedSpace,
             UIBarButtonItem(customView: leftButton),
             leftFlexSpace,
+            titleLeftFixedSpace,
             UIBarButtonItem(customView: titleLabel),
             rightFlexSpace,
+            titleRightFixedSpace,
             UIBarButtonItem(customView: rightButton),
             rightFixedSpace]
     }
     
     private var titleLeftFixedSpace: UIBarButtonItem = {
-        var titleLeftFixedSpace = UIBarButtonItem()
+        var titleLeftFixedSpace = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
         return titleLeftFixedSpace
     }()
     
     private var titleRightFixedSpace: UIBarButtonItem = {
-        var titleRightFixedSpace = UIBarButtonItem()
+        var titleRightFixedSpace = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
         return titleRightFixedSpace
     }()
     
@@ -217,16 +219,7 @@ public class EFNavigationBar: UIView {
         addSubview(toolBar)
         leftButton.frame.size = CGSize(width: 44, height: 44)
         rightButton.frame.size = CGSize(width: 44, height: 44)
-        toolBar.items = [
-            leftFixedSpace,
-            UIBarButtonItem(customView: leftButton),
-            leftFlexSpace,
-            titleLeftFixedSpace,
-            UIBarButtonItem(customView: titleLabel),
-            titleRightFixedSpace,
-            rightFlexSpace,
-            UIBarButtonItem(customView: rightButton),
-            rightFixedSpace]
+        toolBar.items = navigationItems
 
         addSubview(bottomLine)
         updateFrame()
@@ -254,7 +247,6 @@ public class EFNavigationBar: UIView {
         toolBar.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate(
             [
-//                toolBar.topAnchor.constraint(equalTo: topAnchor),
              toolBar.bottomAnchor.constraint(equalTo: bottomAnchor),
              toolBar.leftAnchor.constraint(equalTo: leftAnchor),
              toolBar.rightAnchor.constraint(equalTo: rightAnchor),
@@ -268,6 +260,12 @@ public class EFNavigationBar: UIView {
              bottomLine.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
              bottomLine.heightAnchor.constraint(equalToConstant: 0.5)]
         )
+        
+        leftButton.widthAnchor.constraint(equalToConstant: 44).isActive = true
+        leftButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        
+        rightButton.widthAnchor.constraint(equalToConstant: 44).isActive = true
+        rightButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
 
     }
 }
