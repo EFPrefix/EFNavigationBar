@@ -109,6 +109,7 @@ public class EFNavigationBar: UIView {
         label.textColor = EFNavigationBar.defaultStyle.titleColor
         label.font = EFNavigationBar.defaultStyle.titleFont
         label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -119,6 +120,7 @@ public class EFNavigationBar: UIView {
         button.imageView?.contentMode = .center
         button.isHidden = true
         button.addTarget(self, action: #selector(clickLeft), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
@@ -129,12 +131,14 @@ public class EFNavigationBar: UIView {
         button.imageView?.contentMode = .center
         button.isHidden = true
         button.addTarget(self, action: #selector(clickRight), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
     public lazy var bottomLine: UIView = {
         let view = UIView()
         view.backgroundColor = EFNavigationBar.defaultStyle.bottomLineColor
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
@@ -261,11 +265,13 @@ public class EFNavigationBar: UIView {
              bottomLine.heightAnchor.constraint(equalToConstant: 0.5)]
         )
         
-        leftButton.widthAnchor.constraint(equalToConstant: 44).isActive = true
-        leftButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        let constraints = [leftButton.widthAnchor.constraint(equalToConstant: 44),
+                           leftButton.heightAnchor.constraint(equalToConstant: 44),
+                           rightButton.widthAnchor.constraint(equalToConstant: 44),
+                           rightButton.heightAnchor.constraint(equalToConstant: 44)]
+        constraints.forEach({$0.priority = .defaultHigh + 1})
+        NSLayoutConstraint.activate(constraints)
         
-        rightButton.widthAnchor.constraint(equalToConstant: 44).isActive = true
-        rightButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
 
     }
 }
