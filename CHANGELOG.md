@@ -2,6 +2,18 @@
 
 -----
 
+## [5.2.4](https://github.com/EFPrefix/EFNavigationBar/releases/tag/5.2.4) (2021-06-30)
+
+- Support SPM.
+
+---
+
+## [5.2.3](https://github.com/EFPrefix/EFNavigationBar/releases/tag/5.2.3) (2021-01-18)
+
+- Fix.
+
+---
+
 ## [5.2.2](https://github.com/EFPrefix/EFNavigationBar/releases/tag/5.2.2) (2021-01-12)
 
 - Change frame to layout constraint.

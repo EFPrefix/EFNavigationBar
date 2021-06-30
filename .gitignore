@@ -38,3 +38,6 @@ Pods
 Pods/
 Example/Pods
 Example/Pods/
+
+# SPM
+.swiftpm

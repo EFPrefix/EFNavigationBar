@@ -4,6 +4,9 @@
     <a href="https://travis-ci.org/EFPrefix/EFNavigationBar">
     	<img src="https://img.shields.io/travis/EFPrefix/EFNavigationBar.svg">
     </a>
+    <a href="https://swiftpackageindex.com/EFPrefix/EFNavigationBar">
+        <img src="https://img.shields.io/badge/SPM-ready-orange.svg">
+    </a>
     <a href="https://cocoapods.org/pods/EFNavigationBar">
     	<img src="https://img.shields.io/cocoapods/v/EFNavigationBar.svg?style=flat">
     </a>
@@ -62,6 +65,8 @@ git clone git@github.com:EFPrefix/EFNavigationBar.git; cd EFNavigationBar/Exampl
 
 ## 安装
 
+### CocoaPods
+
 EFNavigationBar 可以通过 [CocoaPods](http://cocoapods.org) 进行获取。只需要在你的 Podfile 中添加如下代码就能实现引入：
 
 ```ruby
@@ -72,6 +77,18 @@ pod 'EFNavigationBar'
 
 ```bash
 pod install
+```
+
+### Swift Package Manager
+
+[Swift Package Manager](https://swift.org/package-manager/) 是一个集成在 Swift 编译器中的用来进行 Swift 代码自动化发布的工具。
+
+如果你已经建立了你的 Swift 包，将 EFNavigationBar 加入依赖是十分容易的，只需要将其添加到你的 `Package.swift` 文件的 `dependencies` 项中即可：
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/EFPrefix/EFNavigationBar.git", .upToNextMinor(from: "5.2.4"))
+]
 ```
 
 ## 使用

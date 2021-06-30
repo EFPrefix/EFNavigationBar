@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "DeviceKit",
+        "repositoryURL": "https://github.com/devicekit/DeviceKit.git",
+        "state": {
+          "branch": null,
+          "revision": "70f1564e4218f0b68b73a4a795cb31aee5696f08",
+          "version": "4.4.0"
+        }
+      },
+      {
+        "package": "EFFoundation",
+        "repositoryURL": "https://github.com/EFPrefix/EFFoundation.git",
+        "state": {
+          "branch": null,
+          "revision": "61b7c637baa0513efc74d80408a3bd01126fe88e",
+          "version": "1.4.11"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
