@@ -329,8 +329,8 @@ public extension EFNavigationBar {
         button.setTitle(title, for: .normal)
         button.setTitleColor(titleColor, for: .normal)
         
-        let titleAlignment = titleAlignment
-        self.titleAlignment = titleAlignment
+        let newTitleAlignment = self.titleAlignment
+        self.titleAlignment = newTitleAlignment
     }
 }
 
