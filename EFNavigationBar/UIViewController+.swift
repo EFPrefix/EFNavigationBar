@@ -45,3 +45,10 @@ public extension UIViewController {
         }
     }
 }
+
+extension CGFloat {
+    
+    static var statusBarHeight: CGFloat = {
+        return UIApplication.shared.statusBarFrame.size.height
+    }()
+}

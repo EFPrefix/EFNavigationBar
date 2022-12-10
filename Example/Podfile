@@ -1,5 +1,5 @@
 use_frameworks!
-platform :ios, '9.3'
+platform :ios, '11.0'
 
 target 'EFNavigationBar_Example' do
   pod 'EFNavigationBar', :path => '../'

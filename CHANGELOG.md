@@ -2,6 +2,10 @@
 
 -----
 
+## [5.3.0](https://github.com/EFPrefix/EFNavigationBar/releases/tag/5.3.0) (2022-12-10)
+
+- Update deployment_target to meet xcode requirements.
+
 ## [5.2.4](https://github.com/EFPrefix/EFNavigationBar/releases/tag/5.2.4) (2021-06-30)
 
 - Support SPM.

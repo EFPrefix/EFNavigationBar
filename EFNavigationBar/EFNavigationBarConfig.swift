@@ -32,7 +32,7 @@ public struct EFNavigationBarConfig {
     public var statusBarStyle: UIStatusBarStyle = UIStatusBarStyle.default
     
     public var title: String?
-    public var height: CGFloat = CGFloat.statusBarAndNavigationBarHeight
+    public var height: CGFloat = CGFloat.statusBarHeight + CGFloat.navigationBarHeight
     public var backgroundColor: UIColor = UIColor.white
     
     public var bottomLineColor: UIColor = UIColor(red: 32.0 / 255.0, green: 36.0 / 255.0, blue: 38.0 / 255.0, alpha: 0.06)
