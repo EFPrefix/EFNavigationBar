@@ -30,6 +30,6 @@ import EFFoundation
 public extension UINavigationController {
     
     open override var preferredStatusBarStyle: UIStatusBarStyle {
-        return visibleViewController?.topViewController.statusBarStyle ?? EFNavigationBar.defaultStyle.statusBarStyle
+        return UIViewController.topViewController?.statusBarStyle ?? EFNavigationBar.defaultStyle.statusBarStyle
     }
 }

@@ -1,9 +1,9 @@
 PODS:
-  - EFFoundation (1.5.4):
-    - EFFoundation/Core (= 1.5.4)
-  - EFFoundation/Core (1.5.4)
-  - EFNavigationBar (5.3.1):
-    - EFFoundation (>= 1.5.4)
+  - EFFoundation (1.6.0):
+    - EFFoundation/Core (= 1.6.0)
+  - EFFoundation/Core (1.6.0)
+  - EFNavigationBar (5.4.0):
+    - EFFoundation (>= 1.6.0)
 
 DEPENDENCIES:
   - EFNavigationBar (from `../`)
@@ -17,9 +17,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  EFFoundation: c6c218497a550d0ef0b9332a9d17fafa86822a03
-  EFNavigationBar: d695853c135b97f0715648b47857b618e2bf18e6
+  EFFoundation: 23d25ffc71dc4033891f25fd878f0f243dccd762
+  EFNavigationBar: beb667de6a1eb1ffcaf400712e20df918ed446ad
 
 PODFILE CHECKSUM: 3fce897ccb2c46e07d5e30ee3c2817877cdac434
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.0

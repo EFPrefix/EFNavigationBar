@@ -29,32 +29,24 @@ import EFFoundation
 
 public struct EFNavigationBarConfig {
     
+    static let defaultNavigationBarHeight: CGFloat = 44
+    
     public var statusBarStyle: UIStatusBarStyle = UIStatusBarStyle.default
     
     public var title: String?
-    public var height: CGFloat = CGFloat.statusBarHeight + CGFloat.navigationBarHeight
+    public var height: CGFloat = CGFloat.statusBarHeight + EFNavigationBarConfig.defaultNavigationBarHeight
     public var backgroundColor: UIColor = UIColor.white
     
     public var bottomLineColor: UIColor = UIColor(red: 32.0 / 255.0, green: 36.0 / 255.0, blue: 38.0 / 255.0, alpha: 0.06)
     
     public var titleColor: UIColor = UIColor.black
-    public var titleSize: CGFloat = 16 {
-        didSet {
-            titleFont = UIFont.systemFont(ofSize: titleSize)
-        }
-    }
     public var titleFont: UIFont = UIFont.pingFangSCMedium(ofSize: 16)
-    let titleHeight: CGFloat = CGFloat.navigationBarHeight
-    let titleWidth: CGFloat = CGFloat.screenWidth - 2 * CGFloat.navigationBarHeight
+    let titleHeight: CGFloat = EFNavigationBarConfig.defaultNavigationBarHeight
+    let titleWidth: CGFloat = CGFloat.screenWidth - 2 * EFNavigationBarConfig.defaultNavigationBarHeight
     
-    public var buttonTitleColor: UIColor = UIApplication.shared?.keyWindow()?.tintColor ?? UIColor.black
-    public var buttonTitleSize: CGFloat = UIFont.labelFontSize {
-        didSet {
-            buttonTitleFont = UIFont.systemFont(ofSize: buttonTitleSize)
-        }
-    }
+    public var buttonTitleColor: UIColor = UIApplication.shared()?.keyWindow()?.tintColor ?? UIColor.black
     public var buttonTitleFont: UIFont = UIFont.systemFont(ofSize: UIFont.labelFontSize)
     public var buttonMargin: CGFloat = 0
-    public var buttonWidth: CGFloat = CGFloat.navigationBarHeight
-    public var buttonHeight: CGFloat = CGFloat.navigationBarHeight
+    public var buttonWidth: CGFloat = EFNavigationBarConfig.defaultNavigationBarHeight
+    public var buttonHeight: CGFloat = EFNavigationBarConfig.defaultNavigationBarHeight
 }

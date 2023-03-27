@@ -245,7 +245,7 @@ public extension EFNavigationBar {
         if let onClickLeft = onLeftButtonClick {
             onClickLeft()
         } else {
-            UIViewController.topViewController.goBack(animated: true)
+            UIViewController.topViewController?.goBack(animated: true)
         }
     }
     

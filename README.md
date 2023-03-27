@@ -92,7 +92,6 @@ navBarTransition = .linear
 // Global
 EFNavigationBar.defaultStyle.backgroundColor = UIColor.white
 EFNavigationBar.defaultStyle.titleColor = UIColor.black
-EFNavigationBar.defaultStyle.titleSize = 18
 EFNavigationBar.defaultStyle.statusBarStyle = UIStatusBarStyle.default
 ```
 

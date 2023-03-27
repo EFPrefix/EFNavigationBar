@@ -25,6 +25,7 @@
 //  THE SOFTWARE.
 
 import UIKit
+import EFFoundation
 
 fileprivate struct AssociatedKeys {
     static var statusBarStyle: String = "statusBarStyle"
@@ -46,9 +47,13 @@ public extension UIViewController {
     }
 }
 
-extension CGFloat {
+public extension CGFloat {
     
-    static var statusBarHeight: CGFloat = {
-        return UIApplication.shared.statusBarFrame.size.height
+    static let statusBarHeight: CGFloat = {
+        let rtnValue: CGFloat = UIApplication.shared()?.statusBarFrame.size.height ?? 0
+        if rtnValue == 0 {
+            return 20 + CGFloat.topSafeAreaHeight
+        }
+        return rtnValue
     }()
 }

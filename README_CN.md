@@ -115,8 +115,6 @@ navBarTransition = .linear
 EFNavigationBar.defaultStyle.backgroundColor = UIColor.white
 // 设置导航栏标题默认颜色
 EFNavigationBar.defaultStyle.titleColor = UIColor.black
-// 设置导航栏标题默认字号
-EFNavigationBar.defaultStyle.titleSize = 18
 // 统一设置状态栏样式
 EFNavigationBar.defaultStyle.statusBarStyle = UIStatusBarStyle.default
 ```
