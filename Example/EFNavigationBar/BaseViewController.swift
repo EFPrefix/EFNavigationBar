@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 import EFNavigationBar
 
 class BaseViewController: UIViewController {
@@ -18,9 +19,13 @@ class BaseViewController: UIViewController {
         automaticallyAdjustsScrollViewInsets = false
         setupNavBar()
     }
-
+    
     fileprivate func setupNavBar() {
         view.addSubview(navBar)
+        navBar.snp.makeConstraints { make in
+            make.left.right.top.equalTo(0)
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(EFNavigationBar.defaultStyle.titleHeight)
+        }
         
         // 设置自定义导航栏背景图片
         navBar.barBackgroundImage = UIImage(named: "millcolorGrad")

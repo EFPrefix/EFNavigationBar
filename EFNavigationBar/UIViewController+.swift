@@ -46,14 +46,3 @@ public extension UIViewController {
         }
     }
 }
-
-public extension CGFloat {
-    
-    static let statusBarHeight: CGFloat = {
-        let rtnValue: CGFloat = UIApplication.shared()?.statusBarFrame.size.height ?? 0
-        if rtnValue == 0 {
-            return 20 + CGFloat.topSafeAreaHeight
-        }
-        return rtnValue
-    }()
-}

@@ -22,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		124680B622196999002D116B /* README_CN.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README_CN.md; path = ../README_CN.md; sourceTree = "<group>"; };
+		12B1051029D2F8D500BF6579 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
 		12D4A8552217C204002C75B5 /* MillcolorGradController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MillcolorGradController.swift; sourceTree = "<group>"; };
 		12D4A8582217C204002C75B5 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		12D4A8592217C204002C75B5 /* ImageNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageNavController.swift; sourceTree = "<group>"; };
@@ -103,6 +104,7 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
+				12B1051029D2F8D500BF6579 /* CHANGELOG.md */,
 				851C65641F5A8D233C060B76 /* EFNavigationBar.podspec */,
 				472677B27A2C5A211D4284DE /* README.md */,
 				124680B622196999002D116B /* README_CN.md */,
@@ -229,11 +231,13 @@
 				"${PODS_ROOT}/Target Support Files/Pods-EFNavigationBar_Example/Pods-EFNavigationBar_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/EFFoundation/EFFoundation.framework",
 				"${BUILT_PRODUCTS_DIR}/EFNavigationBar/EFNavigationBar.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EFFoundation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EFNavigationBar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

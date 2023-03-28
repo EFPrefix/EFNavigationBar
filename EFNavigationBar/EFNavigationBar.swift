@@ -104,8 +104,7 @@ public class EFNavigationBar: UIView {
     
     // init
     public class func CustomNavigationBar() -> EFNavigationBar {
-        let frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: EFNavigationBar.defaultStyle.height)
-        return EFNavigationBar(frame: frame)
+        return EFNavigationBar(frame: CGRect.zero)
     }
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -128,7 +127,6 @@ public class EFNavigationBar: UIView {
     }
     public func updateFrame() {
         
-        let top: CGFloat = CGFloat.statusBarHeight
         let margin: CGFloat = EFNavigationBar.defaultStyle.buttonMargin
         let buttonHeight: CGFloat = EFNavigationBar.defaultStyle.buttonHeight
         let buttonWidth: CGFloat = EFNavigationBar.defaultStyle.buttonWidth
@@ -155,7 +153,7 @@ public class EFNavigationBar: UIView {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate(
             [titleLabel.leftAnchor.constraint(equalTo: leftButton.rightAnchor, constant: 0),
-             titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: top),
+             titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
              titleLabel.heightAnchor.constraint(equalToConstant: titleLabelHeight),
              titleLabel.widthAnchor.constraint(equalToConstant: titleLabelWidth)
             ]

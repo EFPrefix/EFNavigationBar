@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'EFNavigationBar'
-    s.version          = '5.4.0'
+    s.version          = '5.5.0'
     s.summary          = 'An ordinary custom navigation bar.'
     
     s.description      = <<-DESC
@@ -19,5 +19,5 @@ Pod::Spec.new do |s|
     
     s.requires_arc = true
     s.source_files = 'EFNavigationBar/**/*'
-    s.dependency 'EFFoundation', '>= 1.6.0'
+    s.dependency 'EFFoundation', '>= 1.7.0'
 end
