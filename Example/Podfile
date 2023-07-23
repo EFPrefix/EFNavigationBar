@@ -3,5 +3,6 @@ platform :ios, '11.0'
 
 target 'EFNavigationBar_Example' do
   pod 'EFNavigationBar', :path => '../'
+  
   pod 'SnapKit', '5.6.0'
 end

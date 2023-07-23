@@ -1,9 +1,6 @@
 ![](https://raw.githubusercontent.com/EFPrefix/EFNavigationBar/master/Assets/EFNavigationBar.png)
 
 <p align="center">
-    <a href="https://travis-ci.org/EFPrefix/EFNavigationBar">
-    	<img src="https://img.shields.io/travis/EFPrefix/EFNavigationBar.svg">
-    </a>
     <a href="https://swiftpackageindex.com/EFPrefix/EFNavigationBar">
         <img src="https://img.shields.io/badge/SPM-ready-orange.svg">
     </a>
@@ -18,12 +15,6 @@
     </a>
     <a href="https://raw.githubusercontent.com/EFPrefix/EFNavigationBar/master/LICENSE">
     	<img src="https://img.shields.io/cocoapods/l/EFNavigationBar.svg?style=flat">
-    </a>
-    <a href="https://twitter.com/EyreFree777">
-    	<img src="https://img.shields.io/badge/twitter-@EyreFree777-blue.svg?style=flat">
-    </a>
-    <a href="https://www.weibo.com/eyrefree777">
-    	<img src="https://img.shields.io/badge/weibo-@EyreFree-red.svg?style=flat">
     </a>
 </p>
 
@@ -71,7 +62,7 @@ Once you have your Swift package set up, adding EFNavigationBar as a dependency 
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/EFPrefix/EFNavigationBar.git", .upToNextMinor(from: "5.1.4"))
+    .package(url: "https://github.com/EFPrefix/EFNavigationBar.git", .upToNextMinor(from: "5.5.1"))
 ]
 ```
 

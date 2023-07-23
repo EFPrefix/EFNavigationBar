@@ -2,6 +2,12 @@
 
 -----
 
+## [5.5.1](https://github.com/EFPrefix/EFNavigationBar/releases/tag/5.5.1) (2023-07-24)
+
+- Fix `Package.swift`.
+
+---
+
 ## [5.5.0](https://github.com/EFPrefix/EFNavigationBar/releases/tag/5.5.0) (2022-03-28)
 
 - Bugfix.

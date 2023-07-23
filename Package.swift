@@ -10,9 +10,9 @@ let package = Package(
         .library(name: "EFNavigationBar", targets: ["EFNavigationBar"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/EFPrefix/EFFoundation.git", .upToNextMinor(from: "1.5.2"))
+        .package(url: "https://github.com/EFPrefix/EFFoundation.git", .upToNextMinor(from: "1.7.0"))
     ],
     targets: [
-        .target(name: "EFNavigationBar", dependencies: [EFFoundation"], path: "EFNavigationBar"),
+        .target(name: "EFNavigationBar", dependencies: ["EFFoundation"], path: "EFNavigationBar"),
     ]
 )
