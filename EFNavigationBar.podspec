@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'EFNavigationBar'
-    s.version          = '5.5.1'
+    s.version          = '6.0.0.0'
     s.summary          = 'An ordinary custom navigation bar.'
     
     s.description      = <<-DESC
@@ -14,8 +14,8 @@ Pod::Spec.new do |s|
     s.source           = { :git => 'https://github.com/EFPrefix/EFNavigationBar.git', :tag => s.version.to_s }
     s.social_media_url = 'https://twitter.com/EyreFree777'
     
-    s.swift_version = '5.0'
-    s.ios.deployment_target = '11.0'
+    s.swift_version = '6.0'
+    s.ios.deployment_target = '12.0'
     
     s.requires_arc = true
     s.source_files = 'EFNavigationBar/**/*'

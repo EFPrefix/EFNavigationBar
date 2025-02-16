@@ -46,10 +46,8 @@ git clone git@github.com:EFPrefix/EFNavigationBar.git; cd EFNavigationBar/Exampl
 
 ## 环境
 
-| 版本   | 需求                                  |
-|:------|:--------------------------------------|
-| <5.0  | Xcode 10.0+<br>Swift 4.2+<br>iOS 8.0+ |
-| 5.x   | Xcode 10.2+<br>Swift 5.0+<br>iOS 9.3+ |
+- Xcode 16+
+- Swift 6.0+
 
 ## 安装
 
@@ -75,7 +73,7 @@ pod install
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/EFPrefix/EFNavigationBar.git", .upToNextMinor(from: "5.5.1"))
+    .package(url: "https://github.com/EFPrefix/EFNavigationBar.git", .upToNextMinor(from: "6.0.0.0"))
 ]
 ```
 

@@ -38,10 +38,8 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
-| Version | Needs                                 |
-|:--------|:--------------------------------------|
-| <5.0    | Xcode 10.0+<br>Swift 4.2+<br>iOS 8.0+ |
-| 5.x     | Xcode 10.2+<br>Swift 5.0+<br>iOS 9.3+ |
+- Xcode 16+
+- Swift 6.0+
 
 ## Installation
 
@@ -62,7 +60,7 @@ Once you have your Swift package set up, adding EFNavigationBar as a dependency 
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/EFPrefix/EFNavigationBar.git", .upToNextMinor(from: "5.5.1"))
+    .package(url: "https://github.com/EFPrefix/EFNavigationBar.git", .upToNextMinor(from: "6.0.0.0"))
 ]
 ```
 

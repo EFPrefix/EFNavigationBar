@@ -27,6 +27,7 @@
 import UIKit
 import EFFoundation
 
+@MainActor
 public struct EFNavigationBarConfig {
     
     private static let defaultNavigationBarHeight: CGFloat = 44
@@ -38,8 +39,8 @@ public struct EFNavigationBarConfig {
     public var titleColor: UIColor = UIColor.black
     public var titleFont: UIFont = UIFont.pingFangSCMedium(ofSize: 16)
     public var titleHeight: CGFloat = EFNavigationBarConfig.defaultNavigationBarHeight
-    public var titleWidth: CGFloat = CGFloat.screenWidth - 2 * EFNavigationBarConfig.defaultNavigationBarHeight
-    public var buttonTitleColor: UIColor = UIApplication.shared()?.keyWindow()?.tintColor ?? UIColor.black
+    @MainActor public var titleWidth: CGFloat = CGFloat.screenWidth - 2 * EFNavigationBarConfig.defaultNavigationBarHeight
+    @MainActor public var buttonTitleColor: UIColor = UIApplication.shared()?.keyWindow()?.tintColor ?? UIColor.black
     public var buttonTitleFont: UIFont = UIFont.systemFont(ofSize: UIFont.labelFontSize)
     public var buttonMargin: CGFloat = 0
     public var buttonWidth: CGFloat = EFNavigationBarConfig.defaultNavigationBarHeight

@@ -28,7 +28,7 @@ import UIKit
 import EFFoundation
 
 fileprivate struct AssociatedKeys {
-    static var statusBarStyle: String = "statusBarStyle"
+    nonisolated(unsafe) static var statusBarStyle: String = "statusBarStyle"
 }
 
 public extension UIViewController {

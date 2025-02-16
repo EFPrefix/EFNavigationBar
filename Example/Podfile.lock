@@ -1,14 +1,14 @@
 PODS:
-  - EFFoundation (1.7.0):
-    - EFFoundation/Core (= 1.7.0)
-  - EFFoundation/Core (1.7.0)
-  - EFNavigationBar (5.5.1):
+  - EFFoundation (6.0.0.1):
+    - EFFoundation/Core (= 6.0.0.1)
+  - EFFoundation/Core (6.0.0.1)
+  - EFNavigationBar (6.0.0.0):
     - EFFoundation (>= 1.7.0)
-  - SnapKit (5.6.0)
+  - SnapKit (5.7.1)
 
 DEPENDENCIES:
   - EFNavigationBar (from `../`)
-  - SnapKit (= 5.6.0)
+  - SnapKit (= 5.7.1)
 
 SPEC REPOS:
   trunk:
@@ -20,10 +20,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  EFFoundation: 7e608d0cc99ec310d65f6539402f2189c6ad6a9e
-  EFNavigationBar: 2a871acc795d5c3fa141fa7a25b9ab355015cc0b
-  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  EFFoundation: 3c1ed07a50c64ee3f76f7982b8291ac8b127010f
+  EFNavigationBar: 2e5076f8a19c173651d1dd154b24102ac9921943
+  SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
 
-PODFILE CHECKSUM: db9b54783c62d4f41a60fe3ec3ac570a3aff0dcc
+PODFILE CHECKSUM: d10c3b38a56df312cd826f76bc4bcef968de8971
 
-COCOAPODS: 1.12.1
+COCOAPODS: 1.16.2
