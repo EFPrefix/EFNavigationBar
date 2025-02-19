@@ -10,11 +10,11 @@ import UIKit
 import EFNavigationBar
 
 let MainNavBarColor = UIColor.init(red: 0 / 255.0, green: 175 / 255.0, blue: 240 / 255.0, alpha: 1)
-let kScreenWidth = UIScreen.main.bounds.width
-let kScreenHeight = UIScreen.main.bounds.height
-var kNavBarHeight = EFNavigationBar.defaultStyle.titleHeight + (UIApplication.shared()?.statusBarFrame.size.height ?? 0)
+@MainActor let kScreenWidth = UIScreen.main.bounds.width
+@MainActor let kScreenHeight = UIScreen.main.bounds.height
+@MainActor var kNavBarHeight = EFNavigationBar.defaultStyle.titleHeight + (UIApplication.shared()?.statusBarFrame.size.height ?? 0)
 
-@UIApplicationMain
+@main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?

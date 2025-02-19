@@ -9,7 +9,7 @@
 import UIKit
 
 private let IMAGE_HEIGHT: CGFloat = 260
-private let NAVBAR_COLORCHANGE_POINT: CGFloat = IMAGE_HEIGHT - CGFloat(kNavBarHeight * 2)
+@MainActor private let NAVBAR_COLORCHANGE_POINT: CGFloat = IMAGE_HEIGHT - CGFloat(kNavBarHeight * 2)
 
 class CustomNavBarController: BaseViewController {
     lazy var tableView: UITableView = {

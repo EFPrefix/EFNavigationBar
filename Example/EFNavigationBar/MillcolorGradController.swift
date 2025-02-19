@@ -9,9 +9,9 @@
 import UIKit
 
 private let IMAGE_HEIGHT: CGFloat = 250
-private let NAVBAR_COLORCHANGE_POINT: CGFloat = IMAGE_HEIGHT - CGFloat(kNavBarHeight * 2)
+@MainActor private let NAVBAR_COLORCHANGE_POINT: CGFloat = IMAGE_HEIGHT - CGFloat(kNavBarHeight * 2)
 
-class MillcolorGradController: BaseViewController {    
+class MillcolorGradController: BaseViewController {
     lazy var tableView: UITableView = {
         let table: UITableView = UITableView(frame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: self.view.bounds.height), style: .plain)
         table.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -49,7 +49,6 @@ class MillcolorGradController: BaseViewController {
     }
     
     deinit {
-        tableView.delegate = nil
         print("FirstVC deinit")
     }
 }
